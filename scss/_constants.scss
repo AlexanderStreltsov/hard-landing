@@ -1,0 +1,31 @@
+/* основные цвета */
+$white: #FFF;
+$white-dark: #F4F4F4;
+
+$grey-lighter: #EBEBEB;
+$grey-light: #E5E5E5;
+$grey: #CFCFCF;
+$grey-darker: #C7C7C7;
+
+$black-lighter: #333;
+$black-light: #222;
+$black: #151515;
+
+$green: #24B47E;
+$green-darker: #319E75;
+
+
+/* распределение цветов */
+$background-light-theme: $white-dark;
+$background-dark-theme: $black-lighter;
+
+$burger-icon-light-theme: $black;
+
+$primary-text-light-theme: $black;
+$secondary-text-light-theme: $black-light;
+
+$primary-text-dark-theme: $white;
+$secondary-text-dark-theme: $grey;
+
+$button-detailed: $green;
+$button-detailed-hover: $green-darker;
