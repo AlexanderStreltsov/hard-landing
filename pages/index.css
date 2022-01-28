@@ -386,7 +386,7 @@ template {
 
 .header {
   display: flex;
-  display: -webkit-box;
+  display: -webkit-flex;
   justify-content: right;
   align-items: center;
   height: 74px;
