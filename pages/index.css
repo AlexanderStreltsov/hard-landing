@@ -386,11 +386,12 @@ template {
 
 .header {
   display: flex;
+  display: -webkit-box;
   justify-content: right;
   align-items: center;
   height: 74px;
-  position: sticky;
   position: -webkit-sticky;
+  position: sticky;
   top: 0;
   z-index: 2;
   background-color: #F4F4F4;
