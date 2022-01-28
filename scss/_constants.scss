@@ -2,9 +2,11 @@
 $white: #FFF;
 $white-dark: #F4F4F4;
 
-$grey-lighter: #EBEBEB;
-$grey-light: #E5E5E5;
-$grey: #CFCFCF;
+$grey-lightest: #EBEBEB;
+$grey-lighter: #E5E5E5;
+$grey-light: #E3E3E3;
+$grey: #D7D4D4;
+$grey-dark: #CFCFCF;
 $grey-darker: #C7C7C7;
 
 $black-lighter: #333;
@@ -12,7 +14,7 @@ $black-light: #222;
 $black: #151515;
 
 $green: #24B47E;
-$green-darker: #319E75;
+$green-dark: #319E75;
 
 
 /* распределение цветов */
@@ -25,11 +27,13 @@ $primary-text-light-theme: $black;
 $secondary-text-light-theme: $black-light;
 
 $primary-text-dark-theme: $white;
-$secondary-text-dark-theme: $grey;
 
 $button-detailed: $green;
-$button-detailed-hover: $green-darker;
+$button-detailed-hover: $green-dark;
 $button-detailed-text: $white;
+
+$inro-line: $grey;
+$section-line: $grey-light;
 
 /* шрифты */
 $header-weight: 500;
@@ -58,3 +62,27 @@ $button-detailed-height: 18px;
 $button-detailed-letter-spacing: 1px;
 $button-detailed-size-mobile: 13px;
 $button-detailed-height-mobile: 19px;
+
+$intro-bike-name-weight: normal;
+$intro-bike-name-size: 18px;
+$intro-bike-name-height: 18px;
+
+$quote-weight: 600;
+$quote-size: 34px;
+$quote-height: 44px;
+$quote-letter-spacing: -.5px;
+$quote-size-mobile: 23px;
+$quote-height-mobile: 29px;
+
+$author-weight: 500;
+$author-size: 20px;
+$author-height: 32px;
+$author-size-mobile: 14px;;
+$author-height-mobile: 22px;
+
+$prof-weight: normal;
+$prof-size: 16px;
+$prof-height: 28px;
+$prof-opacity: .7;
+$prof-size-mobile: 10px;
+$prof-height-mobile: 16px;

@@ -1,0 +1,85 @@
+.merks {
+  margin: 120px;
+  display: grid;
+  grid-template-columns: fit-content(650px) auto;
+  grid-template-rows: repeat(2, auto);
+  grid-column-gap: 80px;
+  position: relative;
+
+  @include mobile {
+    margin: 80px 18px 40px;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 40px;
+
+    &::before {
+      @include section-line;
+    }
+  }
+
+  &__picture {
+    grid-column: 1/2;
+    grid-row: 1/3;
+    width: 100%;
+    object-fit: cover;
+
+    @media screen and (min-width: 767px) {
+      height: 100%;
+    }
+
+    @include mobile {
+      grid-column: 1;
+      grid-row: 1/2;
+      margin-top: 20px;
+    }
+  }
+
+  &__quote {
+    margin: 0;
+    max-width: 470px;
+    @include font-style(
+      $quote-weight,
+      $quote-size,
+      $quote-height,
+      $quote-letter-spacing);
+
+    @include mobile {
+      font-size: $quote-size-mobile;
+      line-height: $quote-height-mobile;
+    }
+  }
+
+  &__caption  {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__author {
+    margin: 0;
+    @include font-style(
+      $author-weight,
+      $author-size,
+      $author-height);
+
+    @include mobile {
+      font-size: $author-size-mobile;
+      line-height: $author-height-mobile;
+    }
+  }
+
+  &__prof {
+    margin: 6px 0 0;
+    @include font-style(
+      $prof-weight,
+      $prof-size,
+      $prof-height,
+      $opacity: $prof-opacity);
+
+    @include mobile {
+      font-size: $prof-size-mobile;
+      line-height: $prof-height-mobile;
+      margin-top: 4px;
+    }
+  }
+}

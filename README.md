@@ -4,4 +4,4 @@
 ### Обзор
 
 ### Ссылка на проект
-[Сайт "Hard landing"]()
+[Сайт "HARD-01"](https://alexanderstreltsov.github.io/hard-landing/)
