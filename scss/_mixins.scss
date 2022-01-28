@@ -7,7 +7,7 @@
 }
 
 @mixin mobile {
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     @content;
   }
 }
@@ -26,16 +26,18 @@
   transform: rotate($deg);
 }
 
-@mixin font-style($weight, $size, $height) {
+@mixin font-style($weight, $size, $height, $letter-spacing: normal, $opacity: 1) {
   font-weight: $weight;
   font-size: $size;
   line-height: $height;
+  letter-spacing: $letter-spacing;
+  opacity: $opacity;
 }
 
 @mixin font-paragraph {
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 28px;
+  font-weight: $paragrapth-weight;
+  font-size: $paragrapth-size;
+  line-height: $paragrapth-height;
   color: $secondary-text-light-theme;
-  opacity: .7;
+  opacity: $paragrapth-opacity;
 }
