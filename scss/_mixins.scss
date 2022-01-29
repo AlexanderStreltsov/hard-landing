@@ -34,6 +34,13 @@
   opacity: $opacity;
 }
 
+@mixin font-title {
+  font-weight: $title-weight;
+  font-size: $title-size;
+  line-height: $title-height;
+  letter-spacing: $title-letter-spacing;
+}
+
 @mixin font-paragraph {
   font-weight: $paragrapth-weight;
   font-size: $paragrapth-size;
