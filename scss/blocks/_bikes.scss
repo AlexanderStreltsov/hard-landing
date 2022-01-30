@@ -6,7 +6,7 @@
   position: relative;
 
   @include mobile {
-    margin: 0 0 40px;
+    margin: 0 0 84px;
   }
 
   &__title {
@@ -111,7 +111,7 @@
   }
 
   &__link {
-    text-decoration:none;
+    text-decoration: none;
     color: $primary-text-light-theme;
   }
 
