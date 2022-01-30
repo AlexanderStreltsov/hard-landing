@@ -1,5 +1,5 @@
 .training {
-  margin: 254px 120px 120px;
+  padding: 150px 120px 120px;
   display: grid;
   grid-template-columns: minmax(min-content, max-content) fit-content(580px);
   grid-template-rows: repeat(3, minmax(min-content, max-content));
@@ -7,10 +7,11 @@
   position: relative;
 
   @include mobile {
-    margin: 84px 18px 60px;
+    margin: 0 18px;
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-row-gap: 40px;
+    padding: 80px 0 60px;
 
     &::before {
       @include section-line;
@@ -24,7 +25,6 @@
     @include font-title;
 
     @include mobile {
-      margin-top: 40px;
       font-size: $title-size-mobile;
       line-height: $title-height-mobile;
     }

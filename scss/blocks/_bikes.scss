@@ -1,12 +1,13 @@
 .bikes {
-  margin: 120px 120px 104px;
+  padding: 80px 120px 104px;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
   position: relative;
 
   @include mobile {
-    margin: 0 0 84px;
+    margin: 0;
+    padding: 40px 0 44px;
   }
 
   &__title {
@@ -18,7 +19,7 @@
     @include mobile {
       font-size: $title-size-mobile;
       line-height: $title-height-mobile;
-      margin: 40px 18px 0 18px;
+      margin: 0 18px;
     }
   }
 
