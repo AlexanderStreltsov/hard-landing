@@ -52,12 +52,13 @@
     width: 180px;
     height: 50px;
     border-radius: 4px;
+    color: $button-detailed-text;
     @include font-style(
       $button-detailed-weight,
       $button-detailed-size,
       $button-detailed-height,
-      $button-detailed-letter-spacing);
-    color: $button-detailed-text;
+      $button-detailed-letter-spacing
+    );
 
     @include mobile {
       grid-column: 1;
@@ -142,7 +143,7 @@
     margin: 20px 50px;
     width: calc(100% - 100px);
     height: calc(100% - 40px);
-    border-radius: 20px;
+    border-radius: inherit;
 
     @include mobile {
       margin: 10.7px 26.7px;

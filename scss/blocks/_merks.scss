@@ -41,7 +41,8 @@
       $quote-weight,
       $quote-size,
       $quote-height,
-      $quote-letter-spacing);
+      $quote-letter-spacing
+    );
 
     @include mobile {
       font-size: $quote-size-mobile;
@@ -60,7 +61,8 @@
     @include font-style(
       $author-weight,
       $author-size,
-      $author-height);
+      $author-height
+    );
 
     @include mobile {
       font-size: $author-size-mobile;
@@ -74,7 +76,8 @@
       $prof-weight,
       $prof-size,
       $prof-height,
-      $opacity: $prof-opacity);
+      $opacity: $prof-opacity
+    );
 
     @include mobile {
       font-size: $prof-size-mobile;
