@@ -39,6 +39,8 @@ $button-slider: $grey-lightest;
 $button-slider-pointer: $black;
 $icon-slider: $green;
 
+$select-border: $grey-light;
+
 /* шрифты */
 $header-weight: 500;
 $header-size: 14px;
@@ -99,7 +101,14 @@ $bikes-links-size-mobile: 12px;
 $bikes-links-height-mobile: 18px;
 $bikes-links-weight-active: 600;
 $bikes-links-opacity-active: 1;
+$bikes-links-hover: .6;
 
 $bikes-title-weight: 600;
 $bikes-title-size: 18px;
 $bikes-title-height: 22px;
+$bikes-title-size-mobile: 14px;
+$bikes-title-height-mobile: 18px;
+
+$select-title-weight: 600;
+$select-title-size: 11px;
+$select-title-height: 14px;

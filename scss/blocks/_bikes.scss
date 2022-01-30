@@ -3,12 +3,23 @@
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
+  position: relative;
+
+  @include mobile {
+    margin: 0 0 40px;
+  }
 
   &__title {
     @include font-title;
     margin: 0;
     grid-column: 1/2;
     grid-row: 1/2;
+
+    @include mobile {
+      font-size: $title-size-mobile;
+      line-height: $title-height-mobile;
+      margin: 40px 18px 0 18px;
+    }
   }
 
   &__list {
@@ -20,6 +31,10 @@
     grid-row: 1/2;
     justify-content: flex-end;
     align-items: center;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__list-item {
@@ -31,9 +46,14 @@
       $bikes-links-height,
       $opacity: $bikes-links-opacity
     );
+    transition: opacity .5s linear;
 
     &:last-child {
       margin-right: 0;
+    }
+
+    &:hover {
+      opacity: $bikes-links-hover;
     }
 
     &_active {
@@ -52,6 +72,21 @@
     grid-template-columns: repeat(3, minmax(150px, 1fr));
     grid-template-rows: 1fr;
     gap: 30px;
+
+    @include mobile {
+      grid-template-columns: repeat(3, minmax(320px, 1fr));
+      grid-column: 1/2;
+      grid-row: 3/4;
+      margin: 0;
+      gap: 0;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 
   &__card {
@@ -62,11 +97,31 @@
     border-radius: 20px;
     box-shadow: 0 20px 140px 0 rgba(0, 0, 0, .06);
     position: relative;
+    background-color: $background-light-theme;
+    transition: box-shadow .3s linear;
+
+    &:hover {
+      box-shadow: 0 20px 140px 0 rgba(0, 0, 0, .11);
+    }
+
+    @include mobile {
+      scroll-snap-align: center;
+      margin: 20px 18px;
+    }
+  }
+
+  &__link {
+    text-decoration:none;
+    color: $primary-text-light-theme;
   }
 
   &__image {
     margin: 20px;
     border-radius: inherit;
+
+    @include mobile {
+      margin: 15px 15px 0;
+    }
   }
 
   &__card-title {
@@ -78,5 +133,38 @@
       $bikes-title-size,
       $bikes-title-height
     );
+
+    @include mobile {
+      position: static;
+      margin: 3px auto 16px;
+      font-size: $bikes-title-size-mobile;
+      line-height: $bikes-title-height-mobile;
+    }
+  }
+
+  &__select {
+    display: none;
+    box-sizing: border-box;
+
+    @include mobile {
+      display: flex;
+      grid-column: 1/2;
+      grid-row: 2/3;
+      margin: 40px 18px 0;
+      max-width: 114px;
+      color: $primary-text-light-theme;
+      padding: 6px 11px;
+      background-color: $background-light-theme;
+      border: 1px $grey-light solid;
+      border-radius: 2px;
+      outline: 0;
+      outline-offset: 0;
+
+      @include font-style(
+        $select-title-weight,
+        $select-title-size,
+        $select-title-height
+      );
+    }
   }
 }

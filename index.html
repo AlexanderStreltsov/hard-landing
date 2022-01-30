@@ -52,7 +52,8 @@
       <section class="merks">
         <img src="./images/mountains-trail.jpg" class="merks__picture" alt="Трасса в горах">
         <p class="merks__quote">
-          &laquo;Катайся много или мало, долго или коротко, как хочешь&nbsp;&mdash; но&nbsp;катайся&raquo;
+          &laquo;Катайся много или мало, долго или коротко, как хочешь&nbsp;&mdash;
+          <!-- но&nbsp;катайся&raquo; -->
         </p>
         <div class="merks__caption">
           <p class="merks__author">Эдди Меркс</p>
@@ -74,28 +75,37 @@
       </section>
       <section class="bikes">
         <h2 class="bikes__title">Велосипеды</h2>
+        <select class="bikes__select">
+          <option class="bikes__option">Шоссе</option>
+          <option class="bikes__option">Грэвел</option>
+          <option class="bikes__option">ТТ</option>
+        </select>
         <ul class="bikes__list">
-          <li class="bikes__list-item">Шоссе</li>
+          <li class="bikes__list-item bikes__list-item_active">Шоссе</li>
           <li class="bikes__list-item">Грэвел</li>
-          <li class="bikes__list-item bikes__list-item_active">ТТ</li>
+          <li class="bikes__list-item">ТТ</li>
         </ul>
-        <ul class="bikes__cards-list">
-        </ul>
+        <ul class="bikes__cards-list"></ul>
+      </section>
+      <section class="training">
+
       </section>
     </main>
   </div>
   <template id="slide-template">
     <li class="slider__list-item">
-      <img class="slider__image" src="" alt="">
+      <img class="slider__image">
       <div class="slider__trapeze slider__trapeze_display"></div>
     </li>
   </template>
-  <template id="card-template">
+  <template id="bike-template">
     <li class="bikes__card-item">
-      <figure class="bikes__card">
-        <img src="" class="bikes__image" alt="">
-        <figcaption class="bikes__card-title"></figcaption>
-      </figure>
+      <a class="bikes__link" target="_blank">
+        <figure class="bikes__card">
+          <img class="bikes__image">
+          <figcaption class="bikes__card-title"></figcaption>
+        </figure>
+      </a>
     </li>
   </template>
   <script src="./js/index.js"></script>

@@ -786,7 +786,7 @@ template {
 }
 @media screen and (max-width: 767px) {
   .slider {
-    margin: 80px 18px 40px;
+    margin: 80px 18px 0;
     grid-template-columns: auto minmax(0, 60px);
     grid-template-rows: auto minmax(0, 175px) auto;
     row-gap: 40px;
@@ -796,6 +796,15 @@ template {
     position: absolute;
     left: 0;
     top: 1px;
+    width: 100%;
+    height: 1px;
+    background-color: #E3E3E3;
+  }
+  .slider::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 1px;
     width: 100%;
     height: 1px;
     background-color: #E3E3E3;
@@ -832,7 +841,7 @@ template {
     grid-row: 3/4;
     font-size: 12px;
     line-height: 18px;
-    margin: 0;
+    margin: 0 0 80px;
   }
 }
 .slider__carousel {
@@ -841,6 +850,7 @@ template {
   list-style-type: none;
   padding: 0;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 @media screen and (max-width: 767px) {
   .slider__carousel {
@@ -855,6 +865,8 @@ template {
 }
 .slider__image {
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .slider__trapeze {
   position: absolute;
@@ -960,6 +972,12 @@ template {
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .bikes {
+    margin: 0 0 40px;
+  }
 }
 .bikes__title {
   font-weight: bold;
@@ -969,6 +987,13 @@ template {
   margin: 0;
   grid-column: 1/2;
   grid-row: 1/2;
+}
+@media screen and (max-width: 767px) {
+  .bikes__title {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 40px 18px 0 18px;
+  }
 }
 .bikes__list {
   list-style-type: none;
@@ -980,6 +1005,11 @@ template {
   justify-content: flex-end;
   align-items: center;
 }
+@media screen and (max-width: 767px) {
+  .bikes__list {
+    display: none;
+  }
+}
 .bikes__list-item {
   margin-right: 40px;
   cursor: pointer;
@@ -988,9 +1018,13 @@ template {
   line-height: 28px;
   letter-spacing: normal;
   opacity: 0.7;
+  transition: opacity 0.5s linear;
 }
 .bikes__list-item:last-child {
   margin-right: 0;
+}
+.bikes__list-item:hover {
+  opacity: 0.6;
 }
 .bikes__list-item_active {
   opacity: 1;
@@ -1007,6 +1041,22 @@ template {
   grid-template-rows: 1fr;
   gap: 30px;
 }
+@media screen and (max-width: 767px) {
+  .bikes__cards-list {
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
+    grid-column: 1/2;
+    grid-row: 3/4;
+    margin: 0;
+    gap: 0;
+    overflow-x: auto;
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .bikes__cards-list::-webkit-scrollbar {
+    display: none;
+  }
+}
 .bikes__card {
   margin: 0;
   display: flex;
@@ -1015,10 +1065,30 @@ template {
   border-radius: 20px;
   box-shadow: 0 20px 140px 0 rgba(0, 0, 0, 0.06);
   position: relative;
+  background-color: #F4F4F4;
+  transition: box-shadow 0.3s linear;
+}
+.bikes__card:hover {
+  box-shadow: 0 20px 140px 0 rgba(0, 0, 0, 0.11);
+}
+@media screen and (max-width: 767px) {
+  .bikes__card {
+    scroll-snap-align: center;
+    margin: 20px 18px;
+  }
+}
+.bikes__link {
+  text-decoration: none;
+  color: #151515;
 }
 .bikes__image {
   margin: 20px;
   border-radius: inherit;
+}
+@media screen and (max-width: 767px) {
+  .bikes__image {
+    margin: 15px 15px 0;
+  }
 }
 .bikes__card-title {
   position: absolute;
@@ -1029,4 +1099,37 @@ template {
   line-height: 22px;
   letter-spacing: normal;
   opacity: 1;
+}
+@media screen and (max-width: 767px) {
+  .bikes__card-title {
+    position: static;
+    margin: 3px auto 16px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+.bikes__select {
+  display: none;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 767px) {
+  .bikes__select {
+    display: flex;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin: 40px 18px 0;
+    max-width: 114px;
+    color: #151515;
+    padding: 6px 11px;
+    background-color: #F4F4F4;
+    border: 1px #E3E3E3 solid;
+    border-radius: 2px;
+    outline: 0;
+    outline-offset: 0;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: normal;
+    opacity: 1;
+  }
 }/*# sourceMappingURL=index.css.map */
