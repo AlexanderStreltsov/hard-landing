@@ -124,6 +124,9 @@ const bikesContainer = document.querySelector('.bikes__cards-list');
 const bikesLinks = document.querySelector('.bikes__list');
 const bikesSelect = document.querySelector('.bikes__select');
 
+const emailForm = document.querySelector('.footer__form');
+const inputEmail = emailForm.querySelector('.footer__email');
+
 
 const closeMenu = () => {
   burgerIcon.classList.remove('header__burger-icon_open');
@@ -319,6 +322,11 @@ const moveSlide = (action) => {
   updateSlidePosition(newSlideInfo);
 }
 
+const submitEmailHandler = (evt) => {
+  evt.preventDefault();
+  inputEmail.value = 'Круто!';
+}
+
 burgerIcon.addEventListener("click", () => openMenu());
 [...headerLinks].forEach(element => element.addEventListener("click", () => closeMenu()));
 
@@ -332,3 +340,5 @@ const initSlidesElements = initialSlides.map(item => createSlide(item.id, item.n
 addElements('slider', initSlidesElements);
 
 addElements('bikes', getBikesElementsFromInit('highway'));
+
+emailForm.addEventListener("submit", submitEmailHandler);

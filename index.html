@@ -14,13 +14,13 @@
         <nav>
           <ul class="header__menu">
             <li class="header__menu-item">
-              <a href="#" class="header__link">Покрытия и градиенты</a>
+              <a href="#gradients" class="header__link">Покрытия и градиенты</a>
             </li>
             <li class="header__menu-item">
-              <a href="#" class="header__link">Велосипеды</a>
+              <a href="#bikes" class="header__link">Велосипеды</a>
             </li>
             <li class="header__menu-item">
-              <a href="#" class="header__link">Тренировки</a>
+              <a href="#training" class="header__link">Тренировки</a>
             </li>
           </ul>
         </nav>
@@ -52,14 +52,15 @@
       <section class="merks">
         <img src="./images/mountains-trail.jpg" class="merks__picture" alt="Трасса в горах">
         <h2 class="merks__quote">
-          &laquo;Катайся много или мало, долго или коротко, как хочешь&nbsp;&mdash; но&nbsp;катайся&raquo;
+          &laquo;Катайся много или мало, долго или коротко, как хочешь&nbsp;&mdash;
+          но&nbsp;катайся&raquo;
         </h2>
         <div class="merks__caption">
           <p class="merks__author">Эдди Меркс</p>
           <p class="merks__prof">Велогонщик</p>
         </div>
       </section>
-      <section class="slider">
+      <section id="gradients" class="slider">
         <h2 class="slider__title">Шоссе</h2>
         <p class="slider__description">
           На&nbsp;шоссейном велосипеде можно ездить по&nbsp;асфальту на&nbsp;разных градиентах:
@@ -72,7 +73,7 @@
           <button class="slider__button slider__button_type_next"></button>
         </div>
       </section>
-      <section class="bikes">
+      <section id="bikes" class="bikes">
         <h2 class="bikes__title">Велосипеды</h2>
         <select class="bikes__select">
           <option class="bikes__option">Шоссе</option>
@@ -86,7 +87,7 @@
         </ul>
         <ul class="bikes__cards-list"></ul>
       </section>
-      <section class="training">
+      <section id="training" class="training">
         <h2 class="training__title">Тренировки</h2>
         <p class="training__paragraph">
           Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot,
@@ -104,6 +105,14 @@
         <img src="./images/training.jpg" class="training__image" alt="Тренировки">
       </section>
     </main>
+    <footer class="footer">
+      <p class="footer__title">Подпишитесь на&nbsp;рассылку &mdash;</p>
+      <form class="footer__form">
+        <input name="email" type="email" placeholder="Ваш e-mail" class="footer__email" required>
+        <button type="submit" class="footer__submit">ok</button>
+      </form>
+      <p class="footer__copyright">© Road Club 2022</p>
+    </footer>
   </div>
   <template id="slide-template">
     <li class="slider__list-item">

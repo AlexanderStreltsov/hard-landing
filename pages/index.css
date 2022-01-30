@@ -1252,4 +1252,139 @@ template {
     grid-column: 1/2;
     grid-row: 2/3;
   }
+}
+
+.footer {
+  margin: 0;
+  padding: 80px 120px 60px;
+  box-sizing: content-box;
+  background-color: #EFEFEF;
+  display: flex;
+  flex-direction: column;
+}
+.footer__title {
+  margin: 0;
+  max-width: 230px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: normal;
+  opacity: 1;
+}
+@media screen and (max-width: 767px) {
+  .footer {
+    padding: 60px 18px 25px;
+  }
+}
+.footer__form {
+  margin-top: 50px;
+  width: 360px;
+  height: 50px;
+  background-color: inherit;
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .footer__form {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 360px;
+    height: 50px;
+  }
+}
+.footer__email {
+  padding: 11px 20px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  outline: 0;
+  outline-offset: 0;
+  border: 1px rgba(199, 199, 199, 0.5) solid;
+  border-radius: 4px;
+  color: #151515;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 28px;
+  letter-spacing: normal;
+  opacity: 1;
+}
+.footer__email:focus {
+  border-color: #c7c7c7;
+}
+.footer__email::-moz-placeholder {
+  color: #151515;
+  opacity: 0.7;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.footer__email:-ms-input-placeholder {
+  color: #151515;
+  opacity: 0.7;
+  -ms-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.footer__email::placeholder {
+  color: #151515;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+.footer__email:hover::-moz-placeholder {
+  opacity: 1;
+}
+.footer__email:hover:-ms-input-placeholder {
+  opacity: 1;
+}
+.footer__email:hover::placeholder {
+  opacity: 1;
+}
+.footer__email:focus::-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.footer__email:focus:-ms-input-placeholder {
+  opacity: 0;
+  -ms-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.footer__email:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.footer__email:focus ~ .footer__submit {
+  visibility: visible;
+}
+.footer__submit {
+  border: 0;
+  position: absolute;
+  right: 22px;
+  top: 12.5px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  visibility: hidden;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 28px;
+  letter-spacing: normal;
+  opacity: 1;
+}
+.footer__submit:active {
+  visibility: visible;
+}
+.footer__copyright {
+  margin: 100px 0 0;
+  color: #CFCFCF;
+  max-width: 150px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: normal;
+  opacity: 1;
+}
+@media screen and (max-width: 767px) {
+  .footer__copyright {
+    margin-top: 99px;
+    font-weight: 500;
+  }
 }/*# sourceMappingURL=index.css.map */

@@ -1,6 +1,7 @@
 /* основные цвета */
 $white: #FFF;
 $white-dark: #F4F4F4;
+$white-darker: #EFEFEF;
 
 $grey-lightest: #EBEBEB;
 $grey-lighter: #E5E5E5;
@@ -20,6 +21,7 @@ $green-dark: #319E75;
 /* распределение цветов */
 $background-light-theme: $white-dark;
 $background-dark-theme: $black-lighter;
+$background-footer-light-theme: $white-darker;
 
 $burger-icon-light-theme: $black;
 
@@ -40,6 +42,8 @@ $button-slider-pointer: $black;
 $icon-slider: $green;
 
 $select-border: $grey-light;
+
+$copyright: $grey-dark;
 
 /* шрифты */
 $header-weight: 500;
@@ -119,3 +123,17 @@ $training-link-height: 28px;
 $training-link-hover: .75;
 $training-link-size-mobile: 14px;
 $training-link-height-mobile: 20px;
+
+$footer-title-weight: 600;
+$footer-title-size: 24px;
+$footer-title-height: 32px;
+
+$footer-email-weight: 500;
+$footer-email-size: 13px;
+$footer-email-height: 28px;
+$footer-email-opacity: .7;
+
+$footer-copyright-weight: 600;
+$footer-copyright-size: 14px;
+$footer-copyright-height: 20px;
+$footer-copyright-weight-mobile: 500;

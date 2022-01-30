@@ -1,0 +1,119 @@
+.footer {
+  margin: 0;
+  padding: 80px 120px 60px;
+  box-sizing: content-box;
+  background-color: $background-footer-light-theme;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin: 0;
+    max-width: 230px;
+
+    @include font-style(
+      $footer-title-weight,
+      $footer-title-size,
+      $footer-title-height
+    );
+  }
+
+  @include mobile {
+    padding: 60px 18px 25px;
+  }
+
+  &__form {
+    margin-top: 50px;
+    width: 360px;
+    height: 50px;
+    background-color: inherit;
+    position: relative;
+
+    @include mobile {
+      margin-top: 40px;
+      width: 100%;
+      max-width: 360px;
+      height: 50px;
+    }
+  }
+
+  &__email {
+    padding: 11px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+    outline: 0;
+    outline-offset: 0;
+    border: 1px rgba(199, 199, 199, .5) solid;
+    border-radius: 4px;
+    color: $primary-text-light-theme;
+
+    @include font-style(
+      $footer-email-weight,
+      $footer-email-size,
+      $footer-email-height
+    );
+
+    &:focus {
+      border-color: rgba(199, 199, 199)
+    }
+
+    &::placeholder {
+      color: $primary-text-light-theme;
+      opacity: $footer-email-opacity;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover::placeholder {
+      opacity: 1;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:focus ~ .footer__submit {
+      visibility: visible;
+    }
+  }
+
+  &__submit {
+    border: 0;
+    position: absolute;
+    right: 22px;
+    top: 12.5px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    visibility: hidden;
+
+    &:active {
+      visibility: visible;
+    }
+
+    @include font-style(
+      $footer-email-weight,
+      $footer-email-size,
+      $footer-email-height
+    );
+  }
+
+  &__copyright {
+    margin: 100px 0 0;
+    color: $copyright;
+    max-width: 150px;
+
+    @include font-style(
+      $footer-copyright-weight,
+      $footer-copyright-size,
+      $footer-copyright-height
+    );
+
+    @include mobile {
+      margin-top: 99px;
+      font-weight: $footer-copyright-weight-mobile;
+    }
+  }
+}
+
