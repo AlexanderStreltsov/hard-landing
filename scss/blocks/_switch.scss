@@ -1,0 +1,72 @@
+.switch {
+  &__wrapper {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+  }
+
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .switch__slider:before {
+      transform: translateX(20px);
+    }
+  }
+
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $switch-input;
+    border-radius: 9999px;
+    transition: .4s;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 2px;
+      bottom: 2px;
+      border-radius: inherit;
+      background-color: $switch-slider;
+      transition: .4s;
+    }
+
+    &_dark {
+      background-color: $switch-input-dark;
+    }
+  }
+
+  &__icon {
+    &_light {
+      width: 28px;
+      height: 28px;
+      background-image: url('../images/light.svg');
+      margin-right: 22px;
+
+      &_dark {
+        background-image: url('../images/light-dark.svg');
+      }
+    }
+
+    &_dark {
+      width: 28px;
+      height: 28px;
+      background-image: url('../images/dark.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-left: 22px;
+
+      &_dark {
+        background-image: url('../images/dark-dark.svg');
+      }
+    }
+  }
+}

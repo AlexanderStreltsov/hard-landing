@@ -54,6 +54,10 @@
       line-height: $paragrapth-height-mobile;
       margin: 0 0 80px;
     }
+
+    &_dark {
+      color: $secondary-text-dark-theme;
+    }
   }
 
   &__carousel {
@@ -195,6 +199,15 @@
         &::before {
           transform: rotate(45deg);
         }
+      }
+    }
+
+    &_dark {
+      background-color: $button-slider-dark;
+
+      &::before {
+        background-color: $button-slider-dark;
+        border-color: $button-slider-pointer-dark;
       }
     }
   }

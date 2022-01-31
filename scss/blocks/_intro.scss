@@ -41,6 +41,10 @@
       font-size: $paragrapth-size-mobile;
       line-height: $paragrapth-height-mobile;
     }
+
+    &_dark {
+      color: $secondary-text-dark-theme;
+    }
   }
 
   &__button {

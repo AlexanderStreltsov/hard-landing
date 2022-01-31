@@ -10,9 +10,14 @@ $grey: #D7D4D4;
 $grey-dark: #CFCFCF;
 $grey-darker: #C7C7C7;
 
+$black-lightest: #434343;
 $black-lighter: #333;
+$black-lil-light: #2F2F2F;
 $black-light: #222;
 $black: #151515;
+
+$dark-color: #565656;
+$some-dark-color: #545454;
 
 $green: #24B47E;
 $green-dark: #319E75;
@@ -21,14 +26,18 @@ $green-dark: #319E75;
 /* распределение цветов */
 $background-light-theme: $white-dark;
 $background-dark-theme: $black-lighter;
+
 $background-footer-light-theme: $white-darker;
+$background-footer-dark-theme: $black-lil-light;
 
 $burger-icon-light-theme: $black;
+$burger-icon-dark-theme: $white;
 
 $primary-text-light-theme: $black;
-$secondary-text-light-theme: $black-light;
-
 $primary-text-dark-theme: $white;
+
+$secondary-text-light-theme: $black-light;
+$secondary-text-dark-theme: $grey-lighter;
 
 $button-detailed: $green;
 $button-detailed-hover: $green-dark;
@@ -38,12 +47,19 @@ $inro-line: $grey;
 $section-line: $grey-light;
 
 $button-slider: $grey-lightest;
+$button-slider-dark: $black-lightest;
 $button-slider-pointer: $black;
+$button-slider-pointer-dark: $white;
 $icon-slider: $green;
 
 $select-border: $grey-light;
 
 $copyright: $grey-dark;
+$copyright-dark: $dark-color;
+
+$switch-input: $white;
+$switch-input-dark: $some-dark-color;
+$switch-slider: $green;
 
 /* шрифты */
 $header-weight: 500;
@@ -51,6 +67,7 @@ $header-size: 14px;
 $header-height: 18px;
 $header-size-mobile: 18px;
 $header-hover-opacity: .75;
+$header-hover-opacity-dark: .65;
 
 $title-weight: bold;
 $title-size: 55px;
@@ -106,6 +123,7 @@ $bikes-links-height-mobile: 18px;
 $bikes-links-weight-active: 600;
 $bikes-links-opacity-active: 1;
 $bikes-links-hover: .6;
+$bikes-links-hover-dark: .5;
 
 $bikes-title-weight: 600;
 $bikes-title-size: 18px;
@@ -121,6 +139,7 @@ $training-link-weight: 600;
 $training-link-size: 18px;
 $training-link-height: 28px;
 $training-link-hover: .75;
+$training-link-hover-dark: .65;
 $training-link-size-mobile: 14px;
 $training-link-height-mobile: 20px;
 

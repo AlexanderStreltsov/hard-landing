@@ -5,6 +5,7 @@
   grid-template-rows: repeat(3, minmax(min-content, max-content));
   grid-column-gap: 160px;
   position: relative;
+  color: inherit;
 
   @include mobile {
     margin: 0 18px;
@@ -44,6 +45,10 @@
       font-size: $paragrapth-size-mobile;
       line-height: $paragrapth-height-mobile;
     }
+
+    &_dark {
+      color: $secondary-text-dark-theme;
+    }
   }
 
   &__list {
@@ -79,12 +84,18 @@
   }
 
   &__link {
-    color: $primary-text-light-theme;
+    color: inherit;
     text-decoration: none;
     transition: opacity .5s linear;
 
     &:hover {
       opacity: $training-link-hover;
+    }
+
+    &_dark {
+      &:hover {
+        opacity: $training-link-hover-dark;
+      }
     }
   }
 

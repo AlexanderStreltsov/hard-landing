@@ -127,6 +127,18 @@ const bikesSelect = document.querySelector('.bikes__select');
 const emailForm = document.querySelector('.footer__form');
 const inputEmail = emailForm.querySelector('.footer__email');
 
+const switchThemeColor = document.querySelectorAll('.switch__input');
+const mainPage = document.querySelector('.common');
+const introPragraph = document.querySelector('.intro__paragraph');
+const bikesBlockNames = document.querySelectorAll('.bikes__list-item');
+const trainingParagraph = document.querySelector('.training__paragraph');
+const trainingLinks = document.querySelectorAll('.training__link');
+const footer = document.querySelector('.footer');
+const copyright = footer.querySelector('.footer__copyright');
+const switchSlider = document.querySelectorAll('.switch__slider');
+const iconDark = document.querySelectorAll('.switch__icon_dark');
+const iconLight = document.querySelectorAll('.switch__icon_light');
+const footerLogo = footer.querySelector('.footer__logo');
 
 const closeMenu = () => {
   burgerIcon.classList.remove('header__burger-icon_open');
@@ -327,6 +339,31 @@ const submitEmailHandler = (evt) => {
   inputEmail.value = 'Круто!';
 }
 
+const changeThemeColor = () => {
+  const changeElements = [
+    mainPage,
+    burgerIcon,
+    burgerIconCenterLine,
+    introPragraph,
+    sliderDescription,
+    sliderNextButton,
+    sliderPrevButton,
+    trainingParagraph,
+    footer,
+    copyright,
+    footerLogo
+  ];
+
+  [...headerLinks, ...bikesBlockNames, ...trainingLinks, ...switchSlider, ...iconDark, ...iconLight]
+    .forEach(item => changeElements.push(item));
+
+  changeElements.forEach(item => {
+    console.log(item.classList[0])
+    const nameDark = item.classList[0] + '_dark';
+    item.classList.toggle(nameDark);
+  });
+}
+
 burgerIcon.addEventListener("click", () => openMenu());
 [...headerLinks].forEach(element => element.addEventListener("click", () => closeMenu()));
 
@@ -342,3 +379,5 @@ addElements('slider', initSlidesElements);
 addElements('bikes', getBikesElementsFromInit('highway'));
 
 emailForm.addEventListener("submit", submitEmailHandler);
+
+[...switchThemeColor].forEach(item => item.addEventListener("change", changeThemeColor));
