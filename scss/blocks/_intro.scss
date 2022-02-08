@@ -1,7 +1,7 @@
 .intro {
   padding: 20px 0 0 120px;
   display: grid;
-  grid-template-columns: minmax(0, 460px) minmax(0, 810px);
+  grid-template-columns: minmax(0, 34.8%) minmax(0, 62.2%);
   grid-template-rows: repeat(4, minmax(min-content, max-content));
   gap: 50px;
 
@@ -104,19 +104,19 @@
     grid-column: 2/3;
     grid-row: 1/6;
     display: grid;
-    grid-template-columns: minmax(0, 200px) minmax(0, 610px);
+    grid-template-columns: minmax(0, 24.6%) minmax(0, 29.6%) minmax(0, 45.8%);
     grid-template-rows: minmax(0, 327px) minmax(0, 509px);
 
     @include mobile {
       grid-column: 1;
       grid-row: 2/3;
-      grid-template-columns: minmax(30px, 150px) minmax(254px, 1fr);
+      grid-template-columns: minmax(0, 10.5%) minmax(0, 71.8%) minmax(0, 17.7%);
       grid-template-rows: minmax(0, 151px) minmax(197px, 1fr);
     }
   }
 
   &__picture {
-    grid-column: 2/3;
+    grid-column: 2/4;
     grid-row: 1/3;
     width: 100%;
     height: 100%;
@@ -127,33 +127,35 @@
     grid-column: 1/3;
     z-index: 1;
     grid-row: 2/3;
-    max-width: 440px;
-    max-height: 300px;
-    border-radius: 20px;
+    width: 100%;
     background-color: $background-light-theme;
     position: sticky;
+    height: 0;
     top: 421px;
-    margin-bottom: 79px;
-    box-shadow: -20px 60px 220px 0px rgba(0, 0, 0, .2);
+    margin-bottom: 45%;
+
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 68%;
+      background-color: inherit;
+      border-radius: 20px;
+      box-shadow: -20px 60px 220px 0px rgba(0, 0, 0, .2);
+    }
 
     @include mobile {
-      position: static;
-      max-width: 234px;
-      max-height: 160px;
-      margin: 0;
+      position: relative;
+      top: 0;
     }
   }
 
   &__sticky-image {
-    margin: 20px 50px;
-    width: calc(100% - 100px);
-    height: calc(100% - 40px);
-    border-radius: inherit;
-
-    @include mobile {
-      margin: 10.7px 26.7px;
-      width: calc(100% - 53.4px);
-      height: calc(100% - 21.4px);
-    }
+    margin: 4.5% 12%;
+    width: 76%;
+    height: auto;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
