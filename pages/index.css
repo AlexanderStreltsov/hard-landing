@@ -612,11 +612,28 @@ template {
   height: 50px;
   border-radius: 4px;
   color: #FFF;
+  z-index: 1;
+  position: relative;
   font-weight: 600;
   font-size: 14px;
   line-height: 18px;
   letter-spacing: 1px;
   opacity: 1;
+}
+.intro__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: 0;
+  height: inherit;
+  border-radius: inherit;
+  background: #319E75;
+  transition: all 0.8s ease;
+  z-index: -1;
+}
+.intro__button:hover::before {
+  width: 100%;
 }
 @media screen and (max-width: 767px) {
   .intro__button {
@@ -1468,7 +1485,7 @@ template {
   padding: 0;
   cursor: pointer;
   visibility: hidden;
-  background-color: inherit;
+  background-color: transparent;
   color: inherit;
   font-weight: 500;
   font-size: 13px;
