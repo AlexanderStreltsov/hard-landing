@@ -9,15 +9,15 @@ $grey-light: #E3E3E3;
 $grey: #D7D4D4;
 $grey-dark: #CFCFCF;
 $grey-darker: #C7C7C7;
+$grey-darker-shade: #CACACA;
+$grey-darkest: #565656;
+$grey-darkest-shade: #545454;
 
 $black-lightest: #434343;
 $black-lighter: #333;
 $black-lil-light: #2F2F2F;
 $black-light: #222;
 $black: #151515;
-
-$dark-color: #565656;
-$some-dark-color: #545454;
 
 $green: #24B47E;
 $green-dark: #319E75;
@@ -52,14 +52,18 @@ $button-slider-pointer: $black;
 $button-slider-pointer-dark: $white;
 $icon-slider: $green;
 
+$dots-active: $black;
+$dots: $grey-darker-shade;
+
 $select-border: $grey-light;
 
 $copyright: $grey-dark;
-$copyright-dark: $dark-color;
+$copyright-dark: $grey-darkest;
 
 $switch-input: $white;
-$switch-input-dark: $some-dark-color;
+$switch-input-dark: $grey-darkest-shade;
 $switch-slider: $green;
+$switch-slider-hover: $green-dark;
 
 /* шрифты */
 $header-weight: 500;

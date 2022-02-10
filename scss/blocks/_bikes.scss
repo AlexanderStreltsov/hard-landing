@@ -13,8 +13,12 @@
   }
 
   @include mobile {
-    margin: 0;
-    padding: 40px 0 44px;
+    margin: 0 18px;
+    padding: 40px 0;
+
+    &::before {
+      @include section-line;
+    }
   }
 
   &__title {
@@ -26,7 +30,7 @@
     @include mobile {
       font-size: $title-size-mobile;
       line-height: $title-height-mobile;
-      margin: 0 18px;
+      margin: 40px 0 0;
     }
   }
 
@@ -91,7 +95,7 @@
     margin: 0;
     display: grid;
     grid-template-columns: repeat(9, 31.5%);
-    grid-template-rows: 1fr;
+    grid-template-rows: auto;
     gap: 2.5%;
     overflow: hidden;
 
@@ -100,12 +104,13 @@
     }
 
     @include mobile {
-      grid-template-columns: repeat(3, minmax(320px, 1fr));
+      grid-template-columns: repeat(3, 100%);
       grid-column: 1/2;
       grid-row: 3/4;
-      margin: 0;
+      margin-top: 20px;
       gap: 0;
-      overflow-x: auto;
+      padding: 0;
+      overflow: auto;
       scroll-snap-type: x mandatory;
       scrollbar-width: none;
 
@@ -113,11 +118,33 @@
         display: none;
       }
     }
+
+    &_type {
+      &_desktop {
+        @include mobile {
+          display: none;
+        }
+      }
+
+      &_mobile {
+        display: none;
+
+        @include mobile {
+          display: grid;
+        }
+      }
+    }
   }
 
   &__card-item {
     &:first-child {
       margin-left: 4px;
+    }
+
+    @include mobile {
+      &:first-child {
+        margin-left: 0;
+      }
     }
   }
 
@@ -138,7 +165,6 @@
 
     @include mobile {
       scroll-snap-align: center;
-      margin: 20px 18px;
     }
 
     &_dark {
@@ -167,11 +193,25 @@
       font-size: $bikes-title-size-mobile;
       line-height: $bikes-title-height-mobile;
     }
+
+    &_dark {
+      &:hover {
+        color: rgba(255, 255, 255, .5);
+      }
+
+      @include mobile {
+        color: $primary-text-light-theme;
+
+        &:hover {
+          color: rgba(21, 21, 21, .6);
+        }
+      }
+    }
   }
 
   &__image {
     margin: 20px;
-    border-radius: inherit;
+    border-radius: 50px;
 
     @include mobile {
       margin: 15px 15px 0;
@@ -194,6 +234,7 @@
     @include mobile {
       position: static;
       margin: 3px auto 16px;
+      text-align: center;
     }
   }
 
@@ -205,7 +246,7 @@
       display: flex;
       grid-column: 1/2;
       grid-row: 2/3;
-      margin: 40px 18px 0;
+      margin: 40px 0 0;
       max-width: 114px;
       color: $primary-text-light-theme;
       padding: 6px 11px;
@@ -220,6 +261,36 @@
         $select-title-size,
         $select-title-height
       );
+    }
+  }
+
+  &__indicators {
+    display: none;
+
+    @include mobile {
+      display: flex;
+      justify-content: center;
+      grid-column: 1/2;
+      grid-row: 3/4;
+      margin: 121% 0 0;
+      list-style-type: none;
+      padding: 0;
+    }
+  }
+
+  &__indicators-item {
+    width: 4px;
+    height: 4px;
+    background-color: $dots;
+    border-radius: 50%;
+    margin-right: 5px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_active {
+      background-color: $dots-active;
     }
   }
 }

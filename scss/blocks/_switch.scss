@@ -41,6 +41,10 @@
       transition: .4s;
     }
 
+    &:hover {
+      opacity: .7;
+    }
+
     &_dark {
       background-color: $switch-input-dark;
     }

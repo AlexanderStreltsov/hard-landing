@@ -60,7 +60,7 @@
         <img src="./images/mountains-trail.jpg" class="merks__picture" alt="Трасса в горах">
         <h2 class="merks__quote">
           &laquo;Катайся много или мало, долго или коротко, как хочешь&nbsp;&mdash;
-          но&nbsp;катайся&raquo;
+          <!-- но&nbsp;катайся&raquo; -->
         </h2>
         <div class="merks__caption">
           <p class="merks__author">Эдди Меркс</p>
@@ -80,19 +80,21 @@
           <button class="slider__button slider__button_type_next"></button>
         </div>
       </section>
-      <section id="bikes" class="bikes">
+      <section id="bikes" class="bikes bikes_dark">
         <h2 class="bikes__title">Велосипеды</h2>
-        <select class="bikes__select">
-          <option class="bikes__option">Шоссе</option>
-          <option class="bikes__option">Грэвел</option>
-          <option class="bikes__option">ТТ</option>
-        </select>
         <ul class="bikes__list">
           <li id="1" class="bikes__list-item bikes__list-item_active">Шоссе</li>
           <li id="2" class="bikes__list-item">Грэвел</li>
           <li id="3" class="bikes__list-item">ТТ</li>
         </ul>
-        <ul class="bikes__cards-list"></ul>
+        <ul class="bikes__cards-list bikes__cards-list_type_desktop"></ul>
+        <select class="bikes__select">
+          <option class="bikes__option">Шоссе</option>
+          <option class="bikes__option">Грэвел</option>
+          <option class="bikes__option">ТТ</option>
+        </select>
+        <ul class="bikes__cards-list bikes__cards-list_type_mobile"></ul>
+        <ul class="bikes__indicators"></ul>
       </section>
       <section id="training" class="training">
         <h2 class="training__title">Тренировки</h2>

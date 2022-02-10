@@ -28,62 +28,77 @@ const initGradientsSlides = {
   }
 };
 
-const initBikesSlides = [
-  {
-    name: 'Cervelo Caledonia-5',
-    src: './images/highway-cervelo.jpg',
-    alt: 'Сервело Каледония-5',
-    link: 'https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN'
-  },
-  {
-    name: 'Cannondale Systemsix Himod',
-    src: './images/highway-cannondale.jpg',
-    alt: 'Каннондэйл Систсикс Химод',
-    link: 'https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J',
-  },
-  {
-    name: 'Trek Domane SL-7',
-    src: './images/highway-trek.jpg',
-    alt: 'Походный Доман СЛ-7',
-    link: 'https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF'
-  },
-  {
-    name: 'Cervelo Aspero GRX 810',
-    src: './images/gravel-cervelo.jpg',
-    alt: 'Сервело Асперо 810',
-    link: 'https://www.sigmasports.com/item/Cervelo/Aspero-GRX-810-1x-Disc-Gravel-Bike-2021/RJDE'
-  },
-  {
-    name: 'Specialized S-Works Diverge',
-    src: './images/gravel-specialized.jpg',
-    alt: 'Специализированный С-Воркс Дайвердж',
-    link: 'https://www.sigmasports.com/item/Specialized/S-Works-Diverge-Gravel-Bike-2020/NVJ9'
-  },
-  {
-    name: 'Cannondale Topstone Lefty 3',
-    src: './images/gravel-cannondale.jpg',
-    alt: 'Кэннондейл Топстоун Лефти 3',
-    link: 'https://www.sigmasports.com/item/Cannondale/Topstone-Carbon-Lefty-3-Disc-Gravel-Road-Bike-2021/PUC8'
-  },
-  {
-    name: 'Specialized S-Works Shiv',
-    src: './images/tt-specialized.jpg',
-    alt: 'Специализированный С-Воркс Шив',
-    link: 'https://www.sigmasports.com/item/Specialized/S-Works-Shiv-Disc-Limited-Edition-Triathlon-Bike-2019/K8P9'
-  },
-  {
-    name: 'BMC Timemachine 01 ONE',
-    src: './images/tt-bmc.jpg',
-    alt: 'БМС Тайммашин 01',
-    link: 'https://www.sigmasports.com/item/BMC/Timemachine-01-One-Force-Disc-TT-Triathlon-Bike-2021/S835'
-  },
-  {
-    name: 'Cervelo P-Series',
-    src: './images/tt-cervelo.jpg',
-    alt: 'Сервело П-Серия',
-    link: 'https://www.sigmasports.com/item/Cervelo/P-Series-Ultegra-Di2-TT-Triathlon-Bike-2021/RM6Q'
-  }
-];
+const initBikesSlides = {
+  highway: [
+    {
+      id: 'highway-cerv',
+      name: 'Cervelo Caledonia-5',
+      src: './images/highway-cervelo.jpg',
+      alt: 'Сервело Каледония-5',
+      link: 'https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN'
+    },
+    {
+      id: 'highway-cann',
+      name: 'Cannondale Systemsix Himod',
+      src: './images/highway-cannondale.jpg',
+      alt: 'Каннондэйл Систсикс Химод',
+      link: 'https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J',
+    },
+    {
+      id: 'highway-trek',
+      name: 'Trek Domane SL-7',
+      src: './images/highway-trek.jpg',
+      alt: 'Походный Доман СЛ-7',
+      link: 'https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF'
+    }
+  ],
+  gravel: [
+    {
+      id: 'gravel-cerv',
+      name: 'Cervelo Aspero GRX 810',
+      src: './images/gravel-cervelo.jpg',
+      alt: 'Сервело Асперо 810',
+      link: 'https://www.sigmasports.com/item/Cervelo/Aspero-GRX-810-1x-Disc-Gravel-Bike-2021/RJDE'
+    },
+    {
+      id: 'gravel-spec',
+      name: 'Specialized S-Works Diverge',
+      src: './images/gravel-specialized.jpg',
+      alt: 'Специализированный С-Воркс Дайвердж',
+      link: 'https://www.sigmasports.com/item/Specialized/S-Works-Diverge-Gravel-Bike-2020/NVJ9'
+    },
+    {
+      id: 'gravel-cann',
+      name: 'Cannondale Topstone Lefty 3',
+      src: './images/gravel-cannondale.jpg',
+      alt: 'Кэннондейл Топстоун Лефти 3',
+      link: 'https://www.sigmasports.com/item/Cannondale/Topstone-Carbon-Lefty-3-Disc-Gravel-Road-Bike-2021/PUC8'
+    }
+  ],
+  tt: [
+    {
+      id: 'tt-spec',
+      name: 'Specialized S-Works Shiv',
+      src: './images/tt-specialized.jpg',
+      alt: 'Специализированный С-Воркс Шив',
+      link: 'https://www.sigmasports.com/item/Specialized/S-Works-Shiv-Disc-Limited-Edition-Triathlon-Bike-2019/K8P9'
+    },
+    {
+      id: 'tt-bmc',
+      name: 'BMC Timemachine 01 ONE',
+      src: './images/tt-bmc.jpg',
+      alt: 'БМС Тайммашин 01',
+      link: 'https://www.sigmasports.com/item/BMC/Timemachine-01-One-Force-Disc-TT-Triathlon-Bike-2021/S835'
+    },
+    {
+      id: 'tt-cerv',
+      name: 'Cervelo P-Series',
+      src: './images/tt-cervelo.jpg',
+      alt: 'Сервело П-Серия',
+      link: 'https://www.sigmasports.com/item/Cervelo/P-Series-Ultegra-Di2-TT-Triathlon-Bike-2021/RM6Q'
+    }
+  ]
+};
 
 const burgerIcon = document.querySelector('.header__burger-icon');
 const burgerIconCenterLine = document.querySelector('.header__burger-icon-center');
@@ -99,9 +114,11 @@ const sliderNextButton = slider.querySelector('.slider__button_type_next');
 const sliderPrevButton = slider.querySelector('.slider__button_type_prev');
 
 const bikeTemplate = document.querySelector('#bike-template').content;
-const bikesContainer = document.querySelector('.bikes__cards-list');
+const bikesContainer = document.querySelector('.bikes__cards-list_type_desktop');
 const bikesLinks = document.querySelectorAll('.bikes__list-item');
 const bikesSelect = document.querySelector('.bikes__select');
+const bikesContainerMobile = document.querySelector('.bikes__cards-list_type_mobile');
+const bikesIndicatorsContainer = document.querySelector('.bikes__indicators');
 
 const emailForm = document.querySelector('.footer__form');
 const inputEmail = emailForm.querySelector('.footer__email');
@@ -143,7 +160,7 @@ const openMenu = () => {
 }
 /* --- */
 
-/* слайдер блока "Покрытия и градиенты" */
+/* блок градиенты */
 const createSlide = (id, name, src, icon) => {
   const slideElement = slideTemplate.querySelector('.slider__list-item').cloneNode(true);
   const slideImage = slideElement.querySelector('.slider__image');
@@ -236,19 +253,28 @@ const moveSlideHandler = (action) => {
 }
 /* --- */
 
-/* слайдер блока "Велосипеды" (desktop) */
-const createBikeCard = (name, src, alt, link) => {
+/* блок велосипеды */
+const createBikeCard = (id, name, src, alt, link) => {
   const bikeElement = bikeTemplate.querySelector('.bikes__card-item').cloneNode(true);
   const bikeImage = bikeElement.querySelector('.bikes__image');
   const bikeTitle = bikeElement.querySelector('.bikes__card-title');
   const bikeLink = bikeElement.querySelector('.bikes__link');
 
+  bikeElement.id = id
   bikeImage.src = src;
   bikeImage.alt = alt;
   bikeTitle.textContent = name;
   bikeLink.href = link;
 
+  if ([...mainPage.classList].length > 1) {
+    bikeLink.classList.add('bikes__link_dark');
+  }
+
   return bikeElement;
+}
+
+const getBikesCardsElements = (name) => {
+  return initBikesSlides[name].map(item => createBikeCard(item.id, item.name, item.src, item.alt, item.link));
 }
 
 const moveNextSlide = (cards, translate, offset, speed) => {
@@ -293,16 +319,84 @@ const moveBikeBlockHandler = (evt) => {
   active.classList.remove('bikes__list-item_active');
   current.classList.add('bikes__list-item_active');
 }
+
+const getBikesBlockId = (value) => {
+  let name;
+  switch(value) {
+    case 'Шоссе':
+      name = 'highway';
+      break;
+    case 'Грэвел':
+      name = 'gravel';
+      break;
+    case 'ТТ':
+      name = 'tt';
+      break;
+    default:
+      break;
+  }
+
+  return name;
+}
+
+const renderIndicators = () => {
+  const slideElements = 3;
+
+  while (bikesIndicatorsContainer.firstChild) {
+    bikesIndicatorsContainer.removeChild(bikesIndicatorsContainer.firstChild);
+  }
+
+  for (let i = 0; i < slideElements; i++) {
+    const dot = document.createElement('li');
+    dot.classList.add('bikes__indicators-item');
+    if (i === currentIndex) dot.classList.add('bikes__indicators-item_active');
+    bikesIndicatorsContainer.append(dot);
+  }
+}
+
+const changeIndicatorsObserver = new IntersectionObserver((entries) => {
+  const activated = entries.reduce((max, entry) => {
+    return (entry.intersectionRatio > max.intersectionRatio) ? entry : max;
+  });
+
+  if (activated.intersectionRatio > 0) {
+    currentIndex = elementIndices[activated.target.id];
+    renderIndicators();
+  }
+}, {threshold: 0.7});
+
+const defineBikesSelectHandler = () => {
+  const bikesOptions = [...bikesSelect.querySelectorAll('.bikes__option')];
+  bikesOptions.forEach(item => {
+    if (item.selected) {
+      const name = getBikesBlockId(item.value);
+      while (bikesContainerMobile.firstChild) {
+        bikesContainerMobile.removeChild(bikesContainerMobile.firstChild);
+      }
+      const cards = getBikesCardsElements(name);
+      addElements('bikes', cards, bikesContainerMobile);
+
+      currentIndex = 0;
+      elementIndices = {};
+      for (let i = 0; i < 3; i++) {
+        const elements = bikesContainerMobile.querySelectorAll('.bikes__card-item');
+        elementIndices[elements[i].id] = i;
+        changeIndicatorsObserver.observe(elements[i]);
+      }
+      renderIndicators();
+    }
+  });
+}
 /* --- */
 
 /* добавление слайдов покрытий и велосипедов */
-const addElements = (type, data) => {
+const addElements = (type, data, container) => {
   switch (type) {
     case 'slider':
-      data.forEach(item => sliderCarousel.append(item));
+      data.forEach(item => container.append(item));
       break;
     case 'bikes':
-      data.forEach(item => bikesContainer.append(item));
+      data.forEach(item => container.append(item));
     default:
       break;
   }
@@ -315,7 +409,7 @@ const submitEmailHandler = (evt) => {
 }
 
 /* изменение цвета темы */
-const changeThemeColor = (evt) => {
+const changeThemeColorHandler = (evt) => {
   const changeElements = [
     mainPage,
     burgerIcon,
@@ -330,7 +424,9 @@ const changeThemeColor = (evt) => {
     footerLogo
   ];
 
-  [...headerLinks, ...bikesBlockNames, ...trainingLinks, ...switchSlider]
+  const cardsLinks = document.querySelectorAll('.bikes__link');
+
+  [...headerLinks, ...bikesBlockNames, ...trainingLinks, ...switchSlider, ...cardsLinks]
     .forEach(item => changeElements.push(item));
 
   changeElements.forEach(item => {
@@ -355,7 +451,6 @@ const changeThemeColor = (evt) => {
   }
 }
 
-
 burgerIcon.addEventListener('click', () => openMenu());
 [...headerLinks].forEach(element => element.addEventListener('click', () => closeMenu()));
 
@@ -364,9 +459,11 @@ sliderPrevButton.addEventListener('click', () => moveSlideHandler('prev'));
 
 bikesLinks.forEach(item => item.addEventListener('click', moveBikeBlockHandler));
 
+bikesSelect.addEventListener('change', defineBikesSelectHandler);
+
 emailForm.addEventListener('submit', submitEmailHandler);
 
-[...switchThemeColor].forEach(item => item.addEventListener('change', changeThemeColor));
+[...switchThemeColor].forEach(item => item.addEventListener('change', changeThemeColorHandler));
 
 const initSlidesElements = [];
 for (const [key] of Object.entries(initGradientsSlides)) {
@@ -377,74 +474,21 @@ for (const [key] of Object.entries(initGradientsSlides)) {
     initGradientsSlides[key]['icon']
   ));
 }
-addElements('slider', initSlidesElements);
+addElements('slider', initSlidesElements, sliderCarousel);
 
-initBikesCards = initBikesSlides.map(item => createBikeCard(item.name, item.src, item.alt, item.link));
-addElements('bikes', initBikesCards);
+for (const [key] of Object.entries(initBikesSlides)) {
+  const cards = getBikesCardsElements(key);
+  addElements('bikes', cards, bikesContainer);
+}
 
+const cardsMobile = getBikesCardsElements('highway');
+addElements('bikes', cardsMobile, bikesContainerMobile);
 
-
-
-
-
-
-
-// const getBikesElementsFromInit = (name) => initialBikes[name].map(item => createBike(item.name, item.src, item.alt, item.link));
-
-// const getBikesLinks = () => bikesLinks.querySelectorAll('.bikes__list-item');
-
-// const clearBikesContainer = () => {
-//   while (bikesContainer.firstChild) {
-//     bikesContainer.removeChild(bikesContainer.firstChild);
-//   }
-// }
-
-// const addBikesLinkActive = (current) => {
-//   const bikesLinks = getBikesLinks();
-//   bikesLinks.forEach(item => item.classList.remove('bikes__list-item_active'));
-//   current.classList.add('bikes__list-item_active');
-// }
-
-// const getNameBikesBlock = (value) => {
-//   let name;
-//   switch(value) {
-//     case 'Шоссе':
-//       name = 'highway';
-//       break;
-//     case 'Грэвел':
-//       name = 'gravel';
-//       break;
-//     case 'ТТ':
-//       name = 'tt';
-//       break;
-//     default:
-//       break;
-//   }
-
-//   return name;
-// }
-
-// const defineBikesLinksHandler = () => {
-//   const bikesLinks = getBikesLinks();
-//   [...bikesLinks].forEach(item => {
-//     item.addEventListener('click', () => {
-//       const name = getNameBikesBlock(item.textContent);
-//       clearBikesContainer();
-//       addBikesLinkActive(item);
-//       addElements('bikes', getBikesElementsFromInit(name));
-//     });
-//   });
-// }
-
-// const defineBikesSelect = () => {
-//   bikesSelect.addEventListener('change', () => {
-//     const bikesOptions = [...bikesSelect.querySelectorAll('.bikes__option')];
-//     bikesOptions.forEach(item => {
-//       if (item.selected) {
-//         const name = getNameBikesBlock(item.value);
-//         clearBikesContainer();
-//         addElements('bikes', getBikesElementsFromInit(name));
-//       }
-//     });
-//   });
-// }
+let currentIndex = 0;
+let elementIndices = {};
+for (let i = 0; i < 3; i++) {
+  const elements = bikesContainerMobile.querySelectorAll('.bikes__card-item');
+  elementIndices[elements[i].id] = i;
+  changeIndicatorsObserver.observe(elements[i]);
+}
+renderIndicators();
