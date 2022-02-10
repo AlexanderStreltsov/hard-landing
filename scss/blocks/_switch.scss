@@ -1,4 +1,6 @@
 .switch {
+  display: flex;
+
   &__wrapper {
     position: relative;
     display: inline-block;
@@ -45,26 +47,36 @@
   }
 
   &__icon {
-    &_light {
-      width: 28px;
-      height: 28px;
-      background-image: url('../images/light.svg');
-      margin-right: 22px;
+    width: 28px;
+    height: 28px;
+    background-position: center;
+    background-repeat: no-repeat;
 
-      &_dark {
-        background-image: url('../images/light-dark.svg');
+    &_position {
+      &_left {
+        margin-right: 22px;
+      }
+
+      &_right {
+        margin-left: 22px;
       }
     }
 
-    &_dark {
-      width: 28px;
-      height: 28px;
-      background-image: url('../images/dark.svg');
-      background-position: center;
-      background-repeat: no-repeat;
-      margin-left: 22px;
 
-      &_dark {
+    &_type {
+      &_sun-light {
+        background-image: url('../images/light.svg');
+      }
+
+      &_sun-dark {
+        background-image: url('../images/light-dark.svg');
+      }
+
+      &_moon-light {
+        background-image: url('../images/dark.svg');
+      }
+
+      &_moon-dark {
         background-image: url('../images/dark-dark.svg');
       }
     }

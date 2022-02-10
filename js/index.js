@@ -115,15 +115,19 @@ const trainingLinks = document.querySelectorAll('.training__link');
 const footer = document.querySelector('.footer');
 const copyright = footer.querySelector('.footer__copyright');
 const switchSlider = document.querySelectorAll('.switch__slider');
-const iconDark = document.querySelectorAll('.switch__icon_dark');
-const iconLight = document.querySelectorAll('.switch__icon_light');
+const icons = document.querySelectorAll('.switch__icon');
 const footerLogo = footer.querySelector('.footer__logo');
+const headerSwitch = document.querySelector('.header__switch');
+const headerSwitchInput = headerSwitch.querySelector('.switch__input');
+const footerSwitch = document.querySelector('.footer__switch');
+const footerSwitchInput = footerSwitch.querySelector('.switch__input');
 
-/* Мобильное меню */
+/* мобильное меню */
 const closeMenu = () => {
   burgerIcon.classList.remove('header__burger-icon_open');
   burgerIconCenterLine.classList.remove('header__burger-icon-center_open');
   navigation.classList.remove('header__wrapper_open');
+  mainPage.style.overflow = 'visible';
 }
 
 const openMenu = () => {
@@ -134,11 +138,12 @@ const openMenu = () => {
     burgerIcon.classList.add('header__burger-icon_open');
     burgerIconCenterLine.classList.add('header__burger-icon-center_open');
     navigation.classList.add('header__wrapper_open');
+    mainPage.style.overflow = 'hidden';
   }
 }
 /* --- */
 
-/* Слайдер блока "Покрытия и градиенты" */
+/* слайдер блока "Покрытия и градиенты" */
 const createSlide = (id, name, src, icon) => {
   const slideElement = slideTemplate.querySelector('.slider__list-item').cloneNode(true);
   const slideImage = slideElement.querySelector('.slider__image');
@@ -225,13 +230,13 @@ const updateSlidePosition = (info) => {
     : movePrevSlideLoop(speed, offset);
 }
 
-const moveSlide = (action) => {
+const moveSlideHandler = (action) => {
   const newSlideInfo = getNewSlideInfo(action);
   updateSlidePosition(newSlideInfo);
 }
 /* --- */
 
-/* Слайдер блока "Велосипеды" (desktop) */
+/* слайдер блока "Велосипеды" (desktop) */
 const createBikeCard = (name, src, alt, link) => {
   const bikeElement = bikeTemplate.querySelector('.bikes__card-item').cloneNode(true);
   const bikeImage = bikeElement.querySelector('.bikes__image');
@@ -260,7 +265,7 @@ const movePrevSlide = (cards, translate, offset, speed) => {
   });
 }
 
-const updateBikeBlockHandler = (evt) => {
+const moveBikeBlockHandler = (evt) => {
   const slides = 3;
   const speed = 500;
 
@@ -290,70 +295,7 @@ const updateBikeBlockHandler = (evt) => {
 }
 /* --- */
 
-
-
-
-
-const getBikesElementsFromInit = (name) => initialBikes[name].map(item => createBike(item.name, item.src, item.alt, item.link));
-
-const getBikesLinks = () => bikesLinks.querySelectorAll('.bikes__list-item');
-
-const clearBikesContainer = () => {
-  while (bikesContainer.firstChild) {
-    bikesContainer.removeChild(bikesContainer.firstChild);
-  }
-}
-
-const addBikesLinkActive = (current) => {
-  const bikesLinks = getBikesLinks();
-  bikesLinks.forEach(item => item.classList.remove('bikes__list-item_active'));
-  current.classList.add('bikes__list-item_active');
-}
-
-const getNameBikesBlock = (value) => {
-  let name;
-  switch(value) {
-    case 'Шоссе':
-      name = 'highway';
-      break;
-    case 'Грэвел':
-      name = 'gravel';
-      break;
-    case 'ТТ':
-      name = 'tt';
-      break;
-    default:
-      break;
-  }
-
-  return name;
-}
-
-const defineBikesLinksHandler = () => {
-  const bikesLinks = getBikesLinks();
-  [...bikesLinks].forEach(item => {
-    item.addEventListener('click', () => {
-      const name = getNameBikesBlock(item.textContent);
-      clearBikesContainer();
-      addBikesLinkActive(item);
-      addElements('bikes', getBikesElementsFromInit(name));
-    });
-  });
-}
-
-const defineBikesSelect = () => {
-  bikesSelect.addEventListener('change', () => {
-    const bikesOptions = [...bikesSelect.querySelectorAll('.bikes__option')];
-    bikesOptions.forEach(item => {
-      if (item.selected) {
-        const name = getNameBikesBlock(item.value);
-        clearBikesContainer();
-        addElements('bikes', getBikesElementsFromInit(name));
-      }
-    });
-  });
-}
-
+/* добавление слайдов покрытий и велосипедов */
 const addElements = (type, data) => {
   switch (type) {
     case 'slider':
@@ -366,12 +308,14 @@ const addElements = (type, data) => {
   }
 };
 
+/* форма отправки письма */
 const submitEmailHandler = (evt) => {
   evt.preventDefault();
   inputEmail.value = 'Круто!';
 }
 
-const changeThemeColor = () => {
+/* изменение цвета темы */
+const changeThemeColor = (evt) => {
   const changeElements = [
     mainPage,
     burgerIcon,
@@ -386,24 +330,43 @@ const changeThemeColor = () => {
     footerLogo
   ];
 
-  [...headerLinks, ...bikesBlockNames, ...trainingLinks, ...switchSlider, ...iconDark, ...iconLight]
+  [...headerLinks, ...bikesBlockNames, ...trainingLinks, ...switchSlider]
     .forEach(item => changeElements.push(item));
 
   changeElements.forEach(item => {
-    console.log(item.classList[0])
     const nameDark = item.classList[0] + '_dark';
     item.classList.toggle(nameDark);
   });
+
+  [...icons].forEach(item => {
+    const iconName = item.classList[2];
+    const newIconName = iconName.includes('light')
+      ? iconName.replace('light', 'dark')
+      : iconName.replace('dark', 'light');
+    item.classList.remove(iconName);
+    item.classList.add(newIconName);
+  });
+
+  const parentSwitch = evt.target.parentNode.parentNode;
+  if (parentSwitch.classList[0].includes('footer')) {
+    headerSwitchInput.checked = headerSwitchInput.checked ? false : true;
+  } else {
+    footerSwitchInput.checked = footerSwitchInput.checked ? false : true;
+  }
 }
 
 
 burgerIcon.addEventListener('click', () => openMenu());
 [...headerLinks].forEach(element => element.addEventListener('click', () => closeMenu()));
 
-sliderNextButton.addEventListener('click', () => moveSlide('next'));
-sliderPrevButton.addEventListener('click', () => moveSlide('prev'));
+sliderNextButton.addEventListener('click', () => moveSlideHandler('next'));
+sliderPrevButton.addEventListener('click', () => moveSlideHandler('prev'));
 
-bikesLinks.forEach(item => item.addEventListener("click", updateBikeBlockHandler));
+bikesLinks.forEach(item => item.addEventListener('click', moveBikeBlockHandler));
+
+emailForm.addEventListener('submit', submitEmailHandler);
+
+[...switchThemeColor].forEach(item => item.addEventListener('change', changeThemeColor));
 
 const initSlidesElements = [];
 for (const [key] of Object.entries(initGradientsSlides)) {
@@ -419,13 +382,69 @@ addElements('slider', initSlidesElements);
 initBikesCards = initBikesSlides.map(item => createBikeCard(item.name, item.src, item.alt, item.link));
 addElements('bikes', initBikesCards);
 
-// defineBikesLinksHandler();
-// defineBikesSelect();
 
 
 
-// addElements('bikes', getBikesElementsFromInit('highway'));
 
-emailForm.addEventListener('submit', submitEmailHandler);
 
-[...switchThemeColor].forEach(item => item.addEventListener('change', changeThemeColor));
+
+
+// const getBikesElementsFromInit = (name) => initialBikes[name].map(item => createBike(item.name, item.src, item.alt, item.link));
+
+// const getBikesLinks = () => bikesLinks.querySelectorAll('.bikes__list-item');
+
+// const clearBikesContainer = () => {
+//   while (bikesContainer.firstChild) {
+//     bikesContainer.removeChild(bikesContainer.firstChild);
+//   }
+// }
+
+// const addBikesLinkActive = (current) => {
+//   const bikesLinks = getBikesLinks();
+//   bikesLinks.forEach(item => item.classList.remove('bikes__list-item_active'));
+//   current.classList.add('bikes__list-item_active');
+// }
+
+// const getNameBikesBlock = (value) => {
+//   let name;
+//   switch(value) {
+//     case 'Шоссе':
+//       name = 'highway';
+//       break;
+//     case 'Грэвел':
+//       name = 'gravel';
+//       break;
+//     case 'ТТ':
+//       name = 'tt';
+//       break;
+//     default:
+//       break;
+//   }
+
+//   return name;
+// }
+
+// const defineBikesLinksHandler = () => {
+//   const bikesLinks = getBikesLinks();
+//   [...bikesLinks].forEach(item => {
+//     item.addEventListener('click', () => {
+//       const name = getNameBikesBlock(item.textContent);
+//       clearBikesContainer();
+//       addBikesLinkActive(item);
+//       addElements('bikes', getBikesElementsFromInit(name));
+//     });
+//   });
+// }
+
+// const defineBikesSelect = () => {
+//   bikesSelect.addEventListener('change', () => {
+//     const bikesOptions = [...bikesSelect.querySelectorAll('.bikes__option')];
+//     bikesOptions.forEach(item => {
+//       if (item.selected) {
+//         const name = getNameBikesBlock(item.value);
+//         clearBikesContainer();
+//         addElements('bikes', getBikesElementsFromInit(name));
+//       }
+//     });
+//   });
+// }

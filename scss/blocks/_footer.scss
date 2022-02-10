@@ -135,9 +135,6 @@
   }
 
   &__switch {
-    display: flex;
-    align-items: center;
-
     @include mobile {
       display: none;
     }
