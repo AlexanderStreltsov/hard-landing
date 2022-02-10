@@ -1350,15 +1350,21 @@ template {
 .bikes__indicators-item {
   width: 4px;
   height: 4px;
-  background-color: #CACACA;
+  background-color: #C7C7C7;
   border-radius: 50%;
   margin-right: 5px;
 }
 .bikes__indicators-item:last-child {
   margin-right: 0;
 }
-.bikes__indicators-item_active {
+.bikes__indicators-item_type_active-light {
   background-color: #151515;
+}
+.bikes__indicators-item_type_active-dark {
+  background-color: #FFF;
+}
+.bikes__indicators-item_type_dark {
+  background-color: #565656;
 }
 
 .training {

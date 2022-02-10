@@ -289,8 +289,18 @@
       margin-right: 0;
     }
 
-    &_active {
-      background-color: $dots-active;
+    &_type {
+      &_active-light {
+        background-color: $dots-active-light;
+      }
+
+      &_active-dark {
+        background-color: $dots-active-dark;
+      }
+
+      &_dark {
+        background-color: $dots-dark;
+      }
     }
   }
 }

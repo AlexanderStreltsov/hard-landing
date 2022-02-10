@@ -349,7 +349,18 @@ const renderIndicators = () => {
   for (let i = 0; i < slideElements; i++) {
     const dot = document.createElement('li');
     dot.classList.add('bikes__indicators-item');
-    if (i === currentIndex) dot.classList.add('bikes__indicators-item_active');
+
+    const check = [...mainPage.classList].length > 1;
+    if (i === currentIndex) {
+      check
+        ? dot.classList.add('bikes__indicators-item_type_active-dark')
+        : dot.classList.add('bikes__indicators-item_type_active-light')
+    } else {
+      if (check) {
+        dot.classList.add('bikes__indicators-item_type_dark');
+      }
+    }
+
     bikesIndicatorsContainer.append(dot);
   }
 }
