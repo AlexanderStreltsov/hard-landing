@@ -154,6 +154,10 @@
     top: 421px;
     margin-bottom: 45%;
 
+    @-moz-document url-prefix() {
+      margin-bottom: 85%;
+    }
+
     &:before {
       content: "";
       display: block;

@@ -773,6 +773,11 @@ template {
   top: 421px;
   margin-bottom: 45%;
 }
+@-moz-document url-prefix() {
+  .intro__sticky-wrapper {
+    margin-bottom: 85%;
+  }
+}
 .intro__sticky-wrapper:before {
   content: "";
   display: block;
@@ -1081,7 +1086,7 @@ template {
 
 .bikes {
   padding: 80px 0 0;
-  margin: 0 120px 104px;
+  margin: 0 120px 44px;
   display: grid;
   grid-template-columns: 100% auto;
   grid-template-rows: auto 100%;
@@ -1227,7 +1232,7 @@ template {
   }
 }
 .bikes__card {
-  margin: 0;
+  margin: 0 0 60px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -1243,6 +1248,7 @@ template {
 @media screen and (max-width: 767px) {
   .bikes__card {
     scroll-snap-align: center;
+    margin-bottom: 0;
   }
 }
 .bikes__card_dark:hover {
