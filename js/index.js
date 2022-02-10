@@ -1,110 +1,89 @@
-const initialSlides = [
-  {
-    id: 'first',
-    name: 'Шоссе',
-    src: './images/highway.jpg',
-    icon: 'slider__trapeze_icon_highway'
-  },
-  {
-    id: 'second',
-    name: 'Грэвел',
-    src: './images/gravel.jpg',
-    icon: 'slider__trapeze_icon_gravel'
-  },
-  {
-    id: 'third',
-    name: 'ТТ',
-    src: './images/tt.jpg',
-    icon: 'slider__trapeze_icon_tt'
-  }
-];
-
-const infoSlides = {
+const initGradientsSlides = {
   first: {
     id: 'first',
     next: 'second',
     prev: 'third',
-    title: 'Шоссе',
-    description: 'На\u00A0шоссейном велосипеде можно ездить по\u00A0асфальту на\u00A0разных градиентах: будь\u00A0то горы или равнины. Гонки проходят в\u00A0командном пелотоне, но\u00A0тренироваться можно и\u00A0самостоятельно.'
+    name: 'Шоссе',
+    description: 'На\u00A0шоссейном велосипеде можно ездить по\u00A0асфальту на\u00A0разных градиентах: будь\u00A0то горы или равнины. Гонки проходят в\u00A0командном пелотоне, но\u00A0тренироваться можно и\u00A0самостоятельно.',
+    src: './images/highway.jpg',
+    icon: 'slider__trapeze_icon_highway'
   },
   second: {
     id: 'second',
     next: 'third',
     prev: 'first',
-    title: 'Грэвел',
-    description: 'Грэвел похож на\u00A0шоссейный велосипед, но\u00A0конструкция рамы немного отличается, и\u00A0на\u00A0нём стоят более широкие покрышки, всё для того чтобы проехать по\u00A0лёгкому бездорожью.'
+    name: 'Грэвел',
+    description: 'Грэвел похож на\u00A0шоссейный велосипед, но\u00A0конструкция рамы немного отличается, и\u00A0на\u00A0нём стоят более широкие покрышки, всё для того чтобы проехать по\u00A0лёгкому бездорожью.',
+    src: './images/gravel.jpg',
+    icon: 'slider__trapeze_icon_gravel'
   },
   third: {
     id: 'third',
     next: 'first',
     prev: 'second',
-    title: 'ТТ',
-    description: 'ТТ\u00A0\u2013 это велосипед для триатлона или раздельного старта, гооняют на\u00A0таком велике только по\u00A0равнинному асфальту, велик очень быстрые и\u00A0аэродинамичный.'
+    name: 'ТТ',
+    description: 'ТТ\u00A0\u2013 это велосипед для триатлона или раздельного старта, гооняют на\u00A0таком велике только по\u00A0равнинному асфальту, велик очень быстрые и\u00A0аэродинамичный.',
+    src: './images/tt.jpg',
+    icon: 'slider__trapeze_icon_tt'
   }
 };
 
-const initialBikes = {
-  highway: [
-    {
-      name: 'Cervelo Caledonia-5',
-      src: './images/highway-cervelo.jpg',
-      alt: 'Сервело Каледония-5',
-      link: 'https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN '
-    },
-    {
-      name: 'Cannondale Systemsix Himod',
-      src: './images/highway-cannondale.jpg',
-      alt: 'Каннондэйл Систсикс Химод',
-      link: 'https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J'
-    },
-    {
-      name: 'Trek Domane SL-7',
-      src: './images/highway-trek.jpg',
-      alt: 'Походный Доман СЛ-7',
-      link: 'https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF'
-    }
-  ],
-  gravel: [
-    {
-      name: 'Cervelo Aspero GRX 810',
-      src: './images/gravel-cervelo.jpg',
-      alt: 'Сервело Асперо 810',
-      link: 'https://www.sigmasports.com/item/Cervelo/Aspero-GRX-810-1x-Disc-Gravel-Bike-2021/RJDE'
-    },
-    {
-      name: 'Specialized S-Works Diverge',
-      src: './images/gravel-specialized.jpg',
-      alt: 'Специализированный С-Воркс Дайвердж',
-      link: 'https://www.sigmasports.com/item/Specialized/S-Works-Diverge-Gravel-Bike-2020/NVJ9'
-    },
-    {
-      name: 'Cannondale Topstone Lefty 3',
-      src: './images/gravel-cannondale.jpg',
-      alt: 'Кэннондейл Топстоун Лефти 3',
-      link: 'https://www.sigmasports.com/item/Cannondale/Topstone-Carbon-Lefty-3-Disc-Gravel-Road-Bike-2021/PUC8'
-    }
-  ],
-  tt: [
-    {
-      name: 'Specialized S-Works Shiv',
-      src: './images/tt-specialized.jpg',
-      alt: 'Специализированный С-Воркс Шив',
-      link: 'https://www.sigmasports.com/item/Specialized/S-Works-Shiv-Disc-Limited-Edition-Triathlon-Bike-2019/K8P9'
-    },
-    {
-      name: 'BMC Timemachine 01 ONE',
-      src: './images/tt-bmc.jpg',
-      alt: 'БМС Тайммашин 01',
-      link: 'https://www.sigmasports.com/item/BMC/Timemachine-01-One-Force-Disc-TT-Triathlon-Bike-2021/S835'
-    },
-    {
-      name: 'Cervelo P-Series',
-      src: './images/tt-cervelo.jpg',
-      alt: 'Сервело П-Серия',
-      link: 'https://www.sigmasports.com/item/Cervelo/P-Series-Ultegra-Di2-TT-Triathlon-Bike-2021/RM6Q'
-    }
-  ]
-};
+const initBikesSlides = [
+  {
+    name: 'Cervelo Caledonia-5',
+    src: './images/highway-cervelo.jpg',
+    alt: 'Сервело Каледония-5',
+    link: 'https://www.sigmasports.com/item/Cervelo/Caledonia-5-Ultegra-Disc-Road-Bike-2021/RDEN'
+  },
+  {
+    name: 'Cannondale Systemsix Himod',
+    src: './images/highway-cannondale.jpg',
+    alt: 'Каннондэйл Систсикс Химод',
+    link: 'https://www.sigmasports.com/item/Cannondale/SystemSix-HiMOD-Ultegra-Di2-Disc-Road-Bike-2021/R82J',
+  },
+  {
+    name: 'Trek Domane SL-7',
+    src: './images/highway-trek.jpg',
+    alt: 'Походный Доман СЛ-7',
+    link: 'https://www.sigmasports.com/item/Trek/Domane-SL-7-Force-eTap-AXS-Disc-Road-Bike-2021/RULF'
+  },
+  {
+    name: 'Cervelo Aspero GRX 810',
+    src: './images/gravel-cervelo.jpg',
+    alt: 'Сервело Асперо 810',
+    link: 'https://www.sigmasports.com/item/Cervelo/Aspero-GRX-810-1x-Disc-Gravel-Bike-2021/RJDE'
+  },
+  {
+    name: 'Specialized S-Works Diverge',
+    src: './images/gravel-specialized.jpg',
+    alt: 'Специализированный С-Воркс Дайвердж',
+    link: 'https://www.sigmasports.com/item/Specialized/S-Works-Diverge-Gravel-Bike-2020/NVJ9'
+  },
+  {
+    name: 'Cannondale Topstone Lefty 3',
+    src: './images/gravel-cannondale.jpg',
+    alt: 'Кэннондейл Топстоун Лефти 3',
+    link: 'https://www.sigmasports.com/item/Cannondale/Topstone-Carbon-Lefty-3-Disc-Gravel-Road-Bike-2021/PUC8'
+  },
+  {
+    name: 'Specialized S-Works Shiv',
+    src: './images/tt-specialized.jpg',
+    alt: 'Специализированный С-Воркс Шив',
+    link: 'https://www.sigmasports.com/item/Specialized/S-Works-Shiv-Disc-Limited-Edition-Triathlon-Bike-2019/K8P9'
+  },
+  {
+    name: 'BMC Timemachine 01 ONE',
+    src: './images/tt-bmc.jpg',
+    alt: 'БМС Тайммашин 01',
+    link: 'https://www.sigmasports.com/item/BMC/Timemachine-01-One-Force-Disc-TT-Triathlon-Bike-2021/S835'
+  },
+  {
+    name: 'Cervelo P-Series',
+    src: './images/tt-cervelo.jpg',
+    alt: 'Сервело П-Серия',
+    link: 'https://www.sigmasports.com/item/Cervelo/P-Series-Ultegra-Di2-TT-Triathlon-Bike-2021/RM6Q'
+  }
+];
 
 const burgerIcon = document.querySelector('.header__burger-icon');
 const burgerIconCenterLine = document.querySelector('.header__burger-icon-center');
@@ -121,7 +100,7 @@ const sliderPrevButton = slider.querySelector('.slider__button_type_prev');
 
 const bikeTemplate = document.querySelector('#bike-template').content;
 const bikesContainer = document.querySelector('.bikes__cards-list');
-const bikesLinks = document.querySelector('.bikes__list');
+const bikesLinks = document.querySelectorAll('.bikes__list-item');
 const bikesSelect = document.querySelector('.bikes__select');
 
 const emailForm = document.querySelector('.footer__form');
@@ -140,6 +119,7 @@ const iconDark = document.querySelectorAll('.switch__icon_dark');
 const iconLight = document.querySelectorAll('.switch__icon_light');
 const footerLogo = footer.querySelector('.footer__logo');
 
+/* Мобильное меню */
 const closeMenu = () => {
   burgerIcon.classList.remove('header__burger-icon_open');
   burgerIconCenterLine.classList.remove('header__burger-icon-center_open');
@@ -147,7 +127,7 @@ const closeMenu = () => {
 }
 
 const openMenu = () => {
-  const burgerIconClasses = burgerIcon.getAttribute("class");
+  const burgerIconClasses = burgerIcon.getAttribute('class');
   if (burgerIconClasses.includes('open')) {
     closeMenu();
   } else {
@@ -156,7 +136,9 @@ const openMenu = () => {
     navigation.classList.add('header__wrapper_open');
   }
 }
+/* --- */
 
+/* Слайдер блока "Покрытия и градиенты" */
 const createSlide = (id, name, src, icon) => {
   const slideElement = slideTemplate.querySelector('.slider__list-item').cloneNode(true);
   const slideImage = slideElement.querySelector('.slider__image');
@@ -169,13 +151,88 @@ const createSlide = (id, name, src, icon) => {
 
   if (id === 'first') {
     slideElement.classList.add('active');
-    slideIcon.classList.remove('slider__trapeze_display');
+    slideIcon.classList.remove('slider__trapeze_not-display');
   }
 
   return slideElement;
 }
 
-const createBike = (name, src, alt, link) => {
+const getNewSlideInfo = (action) => {
+  const currentSlide = slider.querySelector('.active');
+  const currentSlideInfo = initGradientsSlides[currentSlide.id];
+
+  currentSlide.classList.remove('active');
+
+  const icon = currentSlide.querySelector('.slider__trapeze');
+  icon.classList.add('slider__trapeze_not-display');
+
+  const newSlideInfo = action === 'next'
+    ? initGradientsSlides[currentSlideInfo.next]
+    : initGradientsSlides[currentSlideInfo.prev];
+
+  newSlideInfo.action = action;
+
+  return newSlideInfo;
+}
+
+const moveNextSlideGradients = (speed, offset, icon) => {
+  sliderCarousel.style.cssText = `transition: margin ${speed}ms ease;`;
+  sliderCarousel.style.marginLeft = `${offset}px`
+
+  setTimeout(() => {
+    sliderCarousel.style.cssText = 'transition: none;';
+    const element = sliderCarousel.firstElementChild;
+    const buffer = element.cloneNode(true);
+    sliderCarousel.appendChild(buffer);
+    sliderCarousel.removeChild(element);
+    sliderCarousel.style.marginLeft = '0px';
+    icon.classList.remove('slider__trapeze_not-display');
+  }, speed);
+}
+
+const movePrevSlideGradients = (speed, offset) => {
+  const element = sliderCarousel.lastElementChild;
+  const buffer = element.cloneNode(true);
+  sliderCarousel.insertBefore(buffer, sliderCarousel.firstElementChild);
+  sliderCarousel.removeChild(element);
+  sliderCarousel.style.marginLeft = `${offset}px`;
+  window.getComputedStyle(sliderCarousel).marginLeft;
+  sliderCarousel.style.cssText = `transition: margin ${speed}ms ease;`;
+  sliderCarousel.style.marginLeft = '0px';
+  const newSlideFromCopy = sliderCarousel.querySelector('.active');
+  const icon = newSlideFromCopy.querySelector('.slider__trapeze');
+  setTimeout(() => {
+    sliderCarousel.style.cssText = 'transition: none;';
+    icon.classList.remove('slider__trapeze_not-display');
+  }, speed);
+}
+
+const updateSlidePosition = (info) => {
+  const speed = 500;
+
+  sliderTitle.textContent = info.name;
+  sliderDescription.textContent = info.description;
+
+  const newSlide = slider.querySelector(`#${info.id}`);
+  newSlide.classList.add('active');
+  const newSlideStyle = window.getComputedStyle(newSlide);
+  const action = info.action;
+  const offset = -(newSlide.clientWidth + parseInt(newSlideStyle.marginRight));
+  const icon = newSlide.querySelector('.slider__trapeze');
+
+  !!(action === 'next')
+    ? moveNextSlideGradients(speed, offset, icon)
+    : movePrevSlideGradients(speed, offset);
+}
+
+const moveSlide = (action) => {
+  const newSlideInfo = getNewSlideInfo(action);
+  updateSlidePosition(newSlideInfo);
+}
+/* --- */
+
+/* Слайдер блока "Велосипеды" (desktop) */
+const createBikeCard = (name, src, alt, link) => {
   const bikeElement = bikeTemplate.querySelector('.bikes__card-item').cloneNode(true);
   const bikeImage = bikeElement.querySelector('.bikes__image');
   const bikeTitle = bikeElement.querySelector('.bikes__card-title');
@@ -188,6 +245,56 @@ const createBike = (name, src, alt, link) => {
 
   return bikeElement;
 }
+
+const moveBlockBikes = (shift, offset, speed) => {
+  const cards =  bikesContainer.querySelectorAll('.bikes__card-item');
+  cards.forEach(card => {
+    card.style.cssText = `transition: transform ${speed}ms ease;`;
+    card.style.transform = `translateX(${-offset}px)`;
+  });
+
+  setTimeout(() => {
+    for (let i = 0; i < shift; i++) {
+      element = bikesContainer.firstElementChild;
+      buffer = element.cloneNode(true);
+      buffer.style.cssText = '';
+      bikesContainer.appendChild(buffer);
+      bikesContainer.removeChild(element);
+    }
+    cards.forEach(card => card.style.cssText = '');
+  }, speed);
+}
+
+const updateBikeBlockHandler = (evt) => {
+  const slides = 3;
+  const speed = 500;
+
+  const bikeCard = bikesContainer.querySelector('.bikes__card-item');
+  const sliderStyle = window.getComputedStyle(bikesContainer);
+  const sliderGap = +sliderStyle.gap.replace('%', '') / 100;
+  const curSliderGap = bikesContainer.offsetWidth * sliderGap;
+
+  const active = document.querySelector('.bikes__list-item_active');
+  const current = evt.target;
+
+  let diff = current.id - active.id;
+  if (diff === -2 && active.id === '3') diff = 1;
+  if (diff === -1 && active.id === '3') diff = 2;
+  if (diff === -1 && active.id === '2') diff = 2;
+
+  const offset = slides * diff * (parseInt(bikeCard.offsetWidth) + curSliderGap);
+  const shift = slides * diff;
+
+  moveBlockBikes(shift, offset, speed);
+
+  active.classList.remove('bikes__list-item_active');
+  current.classList.add('bikes__list-item_active');
+}
+/* --- */
+
+
+
+
 
 const getBikesElementsFromInit = (name) => initialBikes[name].map(item => createBike(item.name, item.src, item.alt, item.link));
 
@@ -261,79 +368,6 @@ const addElements = (type, data) => {
   }
 };
 
-const getNewSlideInfo = (action) => {
-  const currentSlide = slider.querySelector('.active');
-  const currentSlideInfo = infoSlides[currentSlide.id];
-
-  currentSlide.classList.remove('active');
-
-  const icon = currentSlide.querySelector('.slider__trapeze');
-  icon.classList.add('slider__trapeze_display');
-
-  const newSlideInfo = action === 'next'
-    ? infoSlides[currentSlideInfo.next]
-    : infoSlides[currentSlideInfo.prev];
-
-  newSlideInfo.action = action;
-
-  return newSlideInfo;
-}
-
-const moveToNextSlide = (speed, offset, icon) => {
-  sliderCarousel.style.cssText = `transition: margin ${speed}ms ease;`;
-  sliderCarousel.style.marginLeft = `${offset}px`
-
-  setTimeout(() => {
-    sliderCarousel.style.cssText = 'transition: none;';
-    const element = sliderCarousel.firstElementChild;
-    const buffer = element.cloneNode(true);
-    sliderCarousel.appendChild(buffer);
-    sliderCarousel.removeChild(element);
-    sliderCarousel.style.marginLeft = '0px';
-    icon.classList.remove('slider__trapeze_display');
-  }, speed);
-}
-
-const movePrevSlide = (speed, offset) => {
-  const element = sliderCarousel.lastElementChild;
-  const buffer = element.cloneNode(true);
-  sliderCarousel.insertBefore(buffer, sliderCarousel.firstElementChild);
-  sliderCarousel.removeChild(element);
-  sliderCarousel.style.marginLeft = `${offset}px`;
-  window.getComputedStyle(sliderCarousel).marginLeft;
-  sliderCarousel.style.cssText = `transition: margin ${speed}ms ease;`;
-  sliderCarousel.style.marginLeft = '0px';
-  const newSlideFromCopy = sliderCarousel.querySelector('.active');
-  const icon = newSlideFromCopy.querySelector('.slider__trapeze');
-  setTimeout(() => {
-    sliderCarousel.style.cssText = 'transition: none;';
-    icon.classList.remove('slider__trapeze_display');
-  }, speed);
-}
-
-const updateSlidePosition = (info) => {
-  const newSlide = slider.querySelector(`#${info.id}`);
-  newSlide.classList.add('active');
-
-  sliderTitle.textContent = info.title;
-  sliderDescription.textContent = info.description;
-
-  const icon = newSlide.querySelector('.slider__trapeze');
-
-  const speed = '500';
-  const offset = -(newSlide.clientWidth + 40);
-  const action = info.action;
-
-  !!(action === 'next')
-    ? moveToNextSlide(speed, offset, icon)
-    : movePrevSlide(speed, offset);
-}
-
-const moveSlide = (action) => {
-  const newSlideInfo = getNewSlideInfo(action);
-  updateSlidePosition(newSlideInfo);
-}
-
 const submitEmailHandler = (evt) => {
   evt.preventDefault();
   inputEmail.value = 'Круто!';
@@ -364,20 +398,36 @@ const changeThemeColor = () => {
   });
 }
 
-burgerIcon.addEventListener("click", () => openMenu());
-[...headerLinks].forEach(element => element.addEventListener("click", () => closeMenu()));
+
+burgerIcon.addEventListener('click', () => openMenu());
+[...headerLinks].forEach(element => element.addEventListener('click', () => closeMenu()));
 
 sliderNextButton.addEventListener('click', () => moveSlide('next'));
 sliderPrevButton.addEventListener('click', () => moveSlide('prev'));
 
-defineBikesLinksHandler();
-defineBikesSelect();
+bikesLinks.forEach(item => item.addEventListener("click", updateBikeBlockHandler));
 
-const initSlidesElements = initialSlides.map(item => createSlide(item.id, item.name, item.src, item.icon));
+const initSlidesElements = [];
+for (const [key] of Object.entries(initGradientsSlides)) {
+  initSlidesElements.push(createSlide (
+    initGradientsSlides[key]['id'],
+    initGradientsSlides[key]['name'],
+    initGradientsSlides[key]['src'],
+    initGradientsSlides[key]['icon']
+  ));
+}
 addElements('slider', initSlidesElements);
 
-addElements('bikes', getBikesElementsFromInit('highway'));
+initBikesCards = initBikesSlides.map(item => createBikeCard(item.name, item.src, item.alt, item.link));
+addElements('bikes', initBikesCards);
 
-emailForm.addEventListener("submit", submitEmailHandler);
+// defineBikesLinksHandler();
+// defineBikesSelect();
 
-[...switchThemeColor].forEach(item => item.addEventListener("change", changeThemeColor));
+
+
+// addElements('bikes', getBikesElementsFromInit('highway'));
+
+emailForm.addEventListener('submit', submitEmailHandler);
+
+[...switchThemeColor].forEach(item => item.addEventListener('change', changeThemeColor));

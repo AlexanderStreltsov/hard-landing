@@ -65,8 +65,7 @@
     margin: 0 0 50px 0;
     list-style-type: none;
     padding: 0;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: hidden;
 
     @include mobile {
       grid-column: 1/3;
@@ -107,7 +106,7 @@
       background-position: center;
     }
 
-    &_display {
+    &_not-display {
       display: none;
     }
 
