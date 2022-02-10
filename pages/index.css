@@ -1009,6 +1009,12 @@ template {
   position: relative;
   color: inherit;
 }
+@media screen and (max-width: 950px) {
+  .bikes {
+    grid-template-columns: 100% auto;
+    grid-template-rows: repeat(2, auto) 100%;
+  }
+}
 @media screen and (max-width: 767px) {
   .bikes {
     margin: 0;
@@ -1034,11 +1040,19 @@ template {
 .bikes__list {
   list-style-type: none;
   padding: 0;
+  margin: 0;
   display: flex;
   grid-column: 1/2;
   grid-row: 1/2;
   justify-content: flex-end;
   align-items: center;
+}
+@media screen and (max-width: 950px) {
+  .bikes__list {
+    margin-top: 30px;
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
 }
 @media screen and (max-width: 767px) {
   .bikes__list {
@@ -1079,8 +1093,12 @@ template {
   grid-template-columns: repeat(9, 31.5%);
   grid-template-rows: 1fr;
   gap: 2.5%;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
+}
+@media screen and (max-width: 950px) {
+  .bikes__cards-list {
+    grid-row: 3/4;
+  }
 }
 @media screen and (max-width: 767px) {
   .bikes__cards-list {
@@ -1127,6 +1145,21 @@ template {
 .bikes__link {
   text-decoration: none;
   color: inherit;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: normal;
+  opacity: 1;
+  transition: color 0.3s linear;
+}
+.bikes__link:hover {
+  color: rgba(21, 21, 21, 0.6);
+}
+@media screen and (max-width: 1100px) {
+  .bikes__link {
+    font-size: 14px;
+    line-height: 18px;
+  }
 }
 .bikes__image {
   margin: 20px;
@@ -1139,20 +1172,22 @@ template {
 }
 .bikes__card-title {
   position: absolute;
-  left: 0;
-  bottom: -42px;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 22px;
-  letter-spacing: normal;
-  opacity: 1;
+  left: 1%;
+  bottom: -12%;
+}
+@media screen and (max-width: 950px) {
+  .bikes__card-title {
+    width: 100%;
+    max-width: 190px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 }
 @media screen and (max-width: 767px) {
   .bikes__card-title {
     position: static;
     margin: 3px auto 16px;
-    font-size: 14px;
-    line-height: 18px;
   }
 }
 .bikes__select {

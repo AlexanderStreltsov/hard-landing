@@ -175,7 +175,7 @@ const getNewSlideInfo = (action) => {
   return newSlideInfo;
 }
 
-const moveNextSlideGradients = (speed, offset, icon) => {
+const moveNextSlideLoop = (speed, offset, icon) => {
   sliderCarousel.style.cssText = `transition: margin ${speed}ms ease;`;
   sliderCarousel.style.marginLeft = `${offset}px`
 
@@ -190,7 +190,7 @@ const moveNextSlideGradients = (speed, offset, icon) => {
   }, speed);
 }
 
-const movePrevSlideGradients = (speed, offset) => {
+const movePrevSlideLoop = (speed, offset) => {
   const element = sliderCarousel.lastElementChild;
   const buffer = element.cloneNode(true);
   sliderCarousel.insertBefore(buffer, sliderCarousel.firstElementChild);
@@ -221,8 +221,8 @@ const updateSlidePosition = (info) => {
   const icon = newSlide.querySelector('.slider__trapeze');
 
   !!(action === 'next')
-    ? moveNextSlideGradients(speed, offset, icon)
-    : movePrevSlideGradients(speed, offset);
+    ? moveNextSlideLoop(speed, offset, icon)
+    : movePrevSlideLoop(speed, offset);
 }
 
 const moveSlide = (action) => {
@@ -246,46 +246,44 @@ const createBikeCard = (name, src, alt, link) => {
   return bikeElement;
 }
 
-const moveBlockBikes = (shift, offset, speed) => {
-  const cards =  bikesContainer.querySelectorAll('.bikes__card-item');
+const moveNextSlide = (cards, translate, offset, speed) => {
   cards.forEach(card => {
     card.style.cssText = `transition: transform ${speed}ms ease;`;
-    card.style.transform = `translateX(${-offset}px)`;
+    card.style.transform = `translateX(${translate - offset}%)`;
   });
+}
 
-  setTimeout(() => {
-    for (let i = 0; i < shift; i++) {
-      element = bikesContainer.firstElementChild;
-      buffer = element.cloneNode(true);
-      buffer.style.cssText = '';
-      bikesContainer.appendChild(buffer);
-      bikesContainer.removeChild(element);
-    }
-    cards.forEach(card => card.style.cssText = '');
-  }, speed);
+const movePrevSlide = (cards, translate, offset, speed) => {
+  cards.forEach(card => {
+    card.style.cssText = `transition: transform ${speed}ms ease;`;
+    card.style.transform = `translateX(${translate + offset}%)`;
+  });
 }
 
 const updateBikeBlockHandler = (evt) => {
   const slides = 3;
   const speed = 500;
 
+  const cards =  bikesContainer.querySelectorAll('.bikes__card-item');
+
+  const active = document.querySelector('.bikes__list-item_active');
+  const current = evt.target;
+  const diff = current.id - active.id;
+
   const bikeCard = bikesContainer.querySelector('.bikes__card-item');
   const sliderStyle = window.getComputedStyle(bikesContainer);
   const sliderGap = +sliderStyle.gap.replace('%', '') / 100;
   const curSliderGap = bikesContainer.offsetWidth * sliderGap;
 
-  const active = document.querySelector('.bikes__list-item_active');
-  const current = evt.target;
+  const offsetPx = slides * Math.abs(diff) * (parseInt(bikeCard.offsetWidth) + curSliderGap + 4) * 3.17;
+  const offset = offsetPx * 100 / bikesContainer.offsetWidth;
 
-  let diff = current.id - active.id;
-  if (diff === -2 && active.id === '3') diff = 1;
-  if (diff === -1 && active.id === '3') diff = 2;
-  if (diff === -1 && active.id === '2') diff = 2;
+  const translate = +cards[0].style.transform.replace('translateX(', '').replace('%)', '');
 
-  const offset = slides * diff * (parseInt(bikeCard.offsetWidth) + curSliderGap);
-  const shift = slides * diff;
-
-  moveBlockBikes(shift, offset, speed);
+  diff !== 0
+    diff > 0
+      ? moveNextSlide(cards, translate, offset, speed)
+      : movePrevSlide(cards, translate, offset, speed);
 
   active.classList.remove('bikes__list-item_active');
   current.classList.add('bikes__list-item_active');

@@ -7,6 +7,11 @@
   position: relative;
   color: inherit;
 
+  @media screen and (max-width: 950px) {
+    grid-template-columns: 100% auto;
+    grid-template-rows: repeat(2, auto) 100%;
+  }
+
   @include mobile {
     margin: 0;
     padding: 40px 0 44px;
@@ -28,11 +33,18 @@
   &__list {
     list-style-type: none;
     padding: 0;
+    margin: 0;
     display: flex;
     grid-column: 1/2;
     grid-row: 1/2;
     justify-content: flex-end;
     align-items: center;
+
+    @media screen and (max-width: 950px) {
+      margin-top: 30px;
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
 
     @include mobile {
       display: none;
@@ -81,8 +93,11 @@
     grid-template-columns: repeat(9, 31.5%);
     grid-template-rows: 1fr;
     gap: 2.5%;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: hidden;
+
+    @media screen and (max-width: 950px) {
+      grid-row: 3/4;
+    }
 
     @include mobile {
       grid-template-columns: repeat(3, minmax(320px, 1fr));
@@ -136,6 +151,22 @@
   &__link {
     text-decoration: none;
     color: inherit;
+
+    @include font-style(
+      $bikes-title-weight,
+      $bikes-title-size,
+      $bikes-title-height
+    );
+    transition: color .3s linear;
+
+    &:hover {
+      color: rgba(21, 21, 21, .6);
+    }
+
+    @media screen and (max-width: 1100px) {
+      font-size: $bikes-title-size-mobile;
+      line-height: $bikes-title-height-mobile;
+    }
   }
 
   &__image {
@@ -149,19 +180,20 @@
 
   &__card-title {
     position: absolute;
-    left: 0;
-    bottom: -42px;
-    @include font-style(
-      $bikes-title-weight,
-      $bikes-title-size,
-      $bikes-title-height
-    );
+    left: 1%;
+    bottom: -12%;
+
+    @media screen and (max-width: 950px) {
+      width: 100%;
+      max-width: 190px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
 
     @include mobile {
       position: static;
       margin: 3px auto 16px;
-      font-size: $bikes-title-size-mobile;
-      line-height: $bikes-title-height-mobile;
     }
   }
 
