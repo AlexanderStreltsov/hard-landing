@@ -1,0 +1,15 @@
+@font-face {
+  @include font-inter(Inter-Regular, normal);
+}
+
+@font-face {
+  @include font-inter(Inter-Medium, 500);
+}
+
+@font-face {
+  @include font-inter(Inter-SemiBold, 600);
+}
+
+@font-face {
+  @include font-inter(Inter-Bold, bold);
+}

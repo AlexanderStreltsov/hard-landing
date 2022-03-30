@@ -1,0 +1,164 @@
+/* основные цвета */
+$white: #FFF;
+$white-dark: #F4F4F4;
+$white-darker: #EFEFEF;
+
+$grey-lightest: #EBEBEB;
+$grey-lighter: #E5E5E5;
+$grey-light: #E3E3E3;
+$grey: #D7D4D4;
+$grey-dark: #CFCFCF;
+$grey-darker: #C7C7C7;
+$grey-darker-shade: #CACACA;
+$grey-darkest: #565656;
+$grey-darkest-shade: #545454;
+
+$black-lightest: #434343;
+$black-lighter: #333;
+$black-lil-light: #2F2F2F;
+$black-light: #222;
+$black: #151515;
+
+$green: #24B47E;
+$green-dark: #319E75;
+
+
+/* распределение цветов */
+$background-light-theme: $white-dark;
+$background-dark-theme: $black-lighter;
+
+$background-footer-light-theme: $white-darker;
+$background-footer-dark-theme: $black-lil-light;
+
+$burger-icon-light-theme: $black;
+$burger-icon-dark-theme: $white;
+
+$primary-text-light-theme: $black;
+$primary-text-dark-theme: $white;
+
+$secondary-text-light-theme: $black-light;
+$secondary-text-dark-theme: $grey-lighter;
+
+$button-detailed: $green;
+$button-detailed-hover: $green-dark;
+$button-detailed-text: $white;
+
+$inro-line: $grey;
+$section-line: $grey-light;
+
+$button-slider: $grey-lightest;
+$button-slider-dark: $black-lightest;
+$button-slider-pointer: $black;
+$button-slider-pointer-dark: $white;
+$icon-slider: $green;
+
+$dots-active-light: $black;
+$dots: $grey-darker;
+$dots-active-dark: $white;
+$dots-dark: $grey-darkest;
+
+$select-border: $grey-light;
+
+$copyright: $grey-dark;
+$copyright-dark: $grey-darkest;
+
+$switch-input: $white;
+$switch-input-dark: $grey-darkest-shade;
+$switch-slider: $green;
+$switch-slider-hover: $green-dark;
+
+/* шрифты */
+$header-weight: 500;
+$header-size: 14px;
+$header-height: 18px;
+$header-size-mobile: 18px;
+$header-hover-opacity: .75;
+$header-hover-opacity-dark: .65;
+
+$title-weight: bold;
+$title-size: 55px;
+$title-height: 60px;
+$title-letter-spacing: -.5px;
+$title-size-mobile: 32px;
+$title-height-mobile: 40px;
+
+$paragrapth-weight: normal;
+$paragrapth-size: 18px;
+$paragrapth-height: 28px;
+$paragrapth-opacity: .7;
+$paragrapth-size-mobile: 12px;
+$paragrapth-height-mobile: 18px;
+
+$button-detailed-weight: 600;
+$button-detailed-size: 14px;
+$button-detailed-height: 18px;
+$button-detailed-letter-spacing: 1px;
+$button-detailed-size-mobile: 13px;
+$button-detailed-height-mobile: 19px;
+
+$intro-bike-name-weight: normal;
+$intro-bike-name-size: 18px;
+$intro-bike-name-height: 18px;
+
+$quote-weight: 600;
+$quote-size: 34px;
+$quote-height: 44px;
+$quote-letter-spacing: -.5px;
+$quote-size-mobile: 23px;
+$quote-height-mobile: 29px;
+
+$author-weight: 500;
+$author-size: 20px;
+$author-height: 32px;
+$author-size-mobile: 14px;;
+$author-height-mobile: 22px;
+
+$prof-weight: normal;
+$prof-size: 16px;
+$prof-height: 28px;
+$prof-opacity: .7;
+$prof-size-mobile: 10px;
+$prof-height-mobile: 16px;
+
+$bikes-links-weight: normal;
+$bikes-links-size: 18px;
+$bikes-links-height: 28px;
+$bikes-links-opacity: .7;
+$bikes-links-size-mobile: 12px;
+$bikes-links-height-mobile: 18px;
+$bikes-links-weight-active: 600;
+$bikes-links-opacity-active: 1;
+$bikes-links-hover: .6;
+$bikes-links-hover-dark: .5;
+
+$bikes-title-weight: 600;
+$bikes-title-size: 18px;
+$bikes-title-height: 22px;
+$bikes-title-size-mobile: 14px;
+$bikes-title-height-mobile: 18px;
+
+$select-title-weight: 600;
+$select-title-size: 11px;
+$select-title-height: 14px;
+
+$training-link-weight: 600;
+$training-link-size: 18px;
+$training-link-height: 28px;
+$training-link-hover: .75;
+$training-link-hover-dark: .65;
+$training-link-size-mobile: 14px;
+$training-link-height-mobile: 20px;
+
+$footer-title-weight: 600;
+$footer-title-size: 24px;
+$footer-title-height: 32px;
+
+$footer-email-weight: 500;
+$footer-email-size: 13px;
+$footer-email-height: 28px;
+$footer-email-opacity: .7;
+
+$footer-copyright-weight: 600;
+$footer-copyright-size: 14px;
+$footer-copyright-height: 20px;
+$footer-copyright-weight-mobile: 500;

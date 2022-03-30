@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HARD-01 landing</title>
+  <link rel="icon" href="./images/favicon.png">
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="common">
+  <div class="page">
+    <header class="header">
+      <div class="header__wrapper">
+        <nav>
+          <ul class="header__menu">
+            <li class="header__menu-item">
+              <a href="#gradients" class="header__link">Покрытия и градиенты</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#bikes" class="header__link">Велосипеды</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#training" class="header__link">Тренировки</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__switch switch">
+          <div class="switch__icon switch__icon_position_left switch__icon_type_sun-light"></div>
+          <label class="switch__wrapper">
+            <input type="checkbox" class="switch__input">
+            <span class="switch__slider"></span>
+          </label>
+          <div class="switch__icon switch__icon_position_right switch__icon_type_moon-light"></div>
+        </div>
+      </div>
+      <div class="header__burger-icon">
+        <div class="header__burger-icon-center"></div>
+      </div>
+    </header>
+    <main>
+      <section class="intro">
+        <h1 class="intro__title">Шоссе, ТТ&nbsp;и&nbsp;Грэвел</h1>
+        <p class="intro__paragraph">
+          Триатлонные старты, горные серпантины или грейвел заезды по&nbsp;живописным маршрутам&nbsp;&mdash;
+          нужно только определиться с&nbsp;выбором велосипеда и&nbsp;отправиться в&nbsp;путь.
+        </p>
+        <button type="button" class="intro__button" onclick="window.location.href='#gradients';">Подробнее</button>
+        <div class="intro__pointer">
+          <p class="intro__bike-name">Cannondale Systemsix</p>
+          <div class="intro__line"></div>
+        </div>
+        <div class="intro__grid-wrapper">
+          <div class="intro__sticky-wrapper">
+            <img src="./images/bike-fix.jpg" class="intro__sticky-image" alt="Каннондейл Системсикс">
+          </div>
+          <img src="./images/forest-trail.jpg" class="intro__picture" alt="Трасса в лесу">
+        </div>
+      </section>
+      <section class="merks">
+        <img src="./images/mountains-trail.jpg" class="merks__picture" alt="Трасса в горах">
+        <h2 class="merks__quote">
+          &laquo;Катайся много или мало, долго или коротко, как хочешь&nbsp;&mdash;
+          но&nbsp;катайся&raquo;
+        </h2>
+        <div class="merks__caption">
+          <p class="merks__author">Эдди Меркс</p>
+          <p class="merks__prof">Велогонщик</p>
+        </div>
+      </section>
+      <section id="gradients" class="slider">
+        <h2 class="slider__title">Шоссе</h2>
+        <p class="slider__description">
+          На&nbsp;шоссейном велосипеде можно ездить по&nbsp;асфальту на&nbsp;разных градиентах:
+          будь&nbsp;то горы или равнины. Гонки проходят в&nbsp;командном пелотоне,
+          но&nbsp;тренироваться можно и&nbsp;самостоятельно.
+        </p>
+        <ul class="slider__carousel"></ul>
+        <div class="slider__buttons">
+          <button class="slider__button slider__button_type_prev"></button>
+          <button class="slider__button slider__button_type_next"></button>
+        </div>
+      </section>
+      <section id="bikes" class="bikes bikes_dark">
+        <h2 class="bikes__title">Велосипеды</h2>
+        <ul class="bikes__list">
+          <li id="1" class="bikes__list-item bikes__list-item_active">Шоссе</li>
+          <li id="2" class="bikes__list-item">Грэвел</li>
+          <li id="3" class="bikes__list-item">ТТ</li>
+        </ul>
+        <ul class="bikes__cards-list bikes__cards-list_type_desktop"></ul>
+        <select class="bikes__select">
+          <option class="bikes__option">Шоссе</option>
+          <option class="bikes__option">Грэвел</option>
+          <option class="bikes__option">ТТ</option>
+        </select>
+        <ul class="bikes__cards-list bikes__cards-list_type_mobile"></ul>
+        <ul class="bikes__indicators"></ul>
+      </section>
+      <section id="training" class="training">
+        <h2 class="training__title">Тренировки</h2>
+        <p class="training__paragraph">
+          Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot,
+          а&nbsp;записать эти тренировки поможет приложение Strava,
+          а&nbsp;также это приложение позволит построить тренировочный план.
+        </p>
+        <ul class="training__list">
+          <li class="training__list-item">
+            <a class="training__link" target="_blank" href="https://www.strava.com">Strava</a>
+          </li>
+          <li class="training__list-item">
+            <a class="training__link" target="_blank" href="https://www.komoot.com">Komoot</a>
+          </li>
+        </ul>
+        <img src="./images/training.jpg" class="training__image" alt="Тренировки">
+      </section>
+    </main>
+    <footer class="footer">
+      <h3 class="footer__title">Подпишитесь на&nbsp;рассылку &mdash;</h3>
+      <form class="footer__form">
+        <input name="email" type="email" autocomplete="off" placeholder="Ваш e-mail" class="footer__email" required>
+        <button type="submit" class="footer__submit">ok</button>
+      </form>
+      <div class="footer__wrapper">
+        <p class="footer__copyright">© Road Club 2022</p>
+        <div class="footer__logo"></div>
+        <div class="footer__switch switch">
+          <div class="switch__icon switch__icon_position_left switch__icon_type_sun-light"></div>
+          <label class="switch__wrapper">
+            <input type="checkbox" class="switch__input">
+            <span class="switch__slider"></span>
+          </label>
+          <div class="switch__icon switch__icon_position_right switch__icon_type_moon-light"></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <template id="slide-template">
+    <li class="slider__list-item">
+      <img class="slider__image">
+      <div class="slider__trapeze slider__trapeze_not-display"></div>
+    </li>
+  </template>
+  <template id="bike-template">
+    <li class="bikes__card-item">
+      <a class="bikes__link" target="_blank">
+        <figure class="bikes__card">
+          <img class="bikes__image">
+          <figcaption class="bikes__card-title"></figcaption>
+        </figure>
+      </a>
+    </li>
+  </template>
+  <script src="./js/index.js"></script>
+</body>
+</html>

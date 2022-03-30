@@ -1,0 +1,60 @@
+@mixin font-inter($name, $weight) {
+  src:
+    url('../vendor/fonts/Inter/#{$name}.woff2') format('woff2'),
+    url('../vendor/fonts/Inter/#{$name}.woff') format('woff');
+  font-family: 'Inter';
+  font-weight: $weight;
+}
+
+@mixin mobile {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin burger($position, $value) {
+  position: absolute;
+  left: 0;
+  #{$position}: $value;
+  width: 100%;
+  height: 3px;
+  background-color: $burger-icon-light-theme;
+}
+
+@mixin burger-open($position, $value, $deg) {
+  #{$position}: $value;
+  transform: rotate($deg);
+}
+
+@mixin font-style($weight, $size, $height, $letter-spacing: normal, $opacity: 1) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  letter-spacing: $letter-spacing;
+  opacity: $opacity;
+}
+
+@mixin font-title {
+  font-weight: $title-weight;
+  font-size: $title-size;
+  line-height: $title-height;
+  letter-spacing: $title-letter-spacing;
+}
+
+@mixin font-paragraph {
+  font-weight: $paragrapth-weight;
+  font-size: $paragrapth-size;
+  line-height: $paragrapth-height;
+  color: $secondary-text-light-theme;
+  opacity: $paragrapth-opacity;
+}
+
+@mixin section-line {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 100%;
+  height: 1px;
+  background-color: $section-line;
+}
